@@ -99,7 +99,7 @@ Fill the  <a href="assets/anisora_benchmark_agreement_form.doc">form</a> and sen
 ```
 @article{jiang2024anisora,
   title={AniSora: Exploring the Frontiers of Animation Video Generation in the Sora Era},
-  author={Yudong Jiang, Baohan Xu, Siqian Yang, Mingyu Yin, Jing Liu, Chao Xu, Siqi Wang, Yidi Wu, Bingwen Zhu, Qi Sen, Xingyu Zheng,Jixuan Xu, Yue Zhang, Jinlong Hou and Huyang Sun},
+  author={Yudong Jiang, Baohan Xu, Siqian Yang, Mingyu Yin, Jing Liu, Chao Xu, Siqi Wang, Yidi Wu, Bingwen Zhu, Xinwen Zhang, Xingyu Zheng,Jixuan Xu, Yue Zhang, Jinlong Hou and Huyang Sun},
   journal={arXiv preprint arXiv:2412.10255},
   year={2024}
 }
