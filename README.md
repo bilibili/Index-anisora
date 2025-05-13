@@ -17,12 +17,12 @@ Powered by our IJCAI'25-accepted work  <a href='http://arxiv.org/abs/2412.10255'
 ## Video Demos
 
 <div align="center">
-    <video src="https://github.com/user-attachments/assets/66232647-bd71-441e-a899-ada27c5bee01" controls width="60%" poster=""></video>
+    <video src="https://github.com/user-attachments/assets/0fe90036-7634-4d98-9a7e-6719d2acdb48" controls width="60%" poster=""></video>
 </div>
 
 VTubers
 <div align="center">
-    <video src="https://github.com/user-attachments/assets/eb0f5fb4-5bdd-44c3-9d8b-b6f5c6126d17" controls width="60%" poster=""></video>
+    <video src="https://github.com/user-attachments/assets/c932535b-2c12-4353-9a92-e5f5f6c21cbb" controls width="60%" poster=""></video>
 </div>
 
 
