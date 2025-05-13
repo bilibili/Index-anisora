@@ -1,0 +1,7 @@
+data:  
+  - 
+    name: "video_eval"
+    type: json
+    path: "/DATA/bvac/personal/video_generation/benchmark/VideoScore/training/train_regression_benchmark2.json"
+    format: classification # change to classification for idefics2
+    split: train

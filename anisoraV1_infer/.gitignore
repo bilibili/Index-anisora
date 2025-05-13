@@ -1,0 +1,15 @@
+*output/
+*__pycache__*
+*samples*/
+*runs/
+*checkpoints/
+master_ip
+*logs/
+*.DS_Store
+.idea
+*.pyc
+*test_file/
+*res/
+*test_data/
+*result*
+

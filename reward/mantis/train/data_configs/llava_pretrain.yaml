@@ -1,0 +1,9 @@
+data:
+  - 
+    name: "llava_pretrain"
+    type: json
+    path: "/h/dongfu/WorkSpace/Mantis/data/llava-pretrain/data/train.json"
+    format: chat
+    split: train
+    shuffle: true
+    revision: script

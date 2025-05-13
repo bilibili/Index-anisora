@@ -1,0 +1,9 @@
+data:  
+  - 
+    name: "video_eval"
+    type: json
+    path: "../../data/video_eval/data/all_50k/train_95k_resampled_for_mantis/train.json"
+    format: chat_video
+    split: train
+    max_num_frames: 8
+    video_dir: "../../data/video_eval/data/all_50k/train_95k_resampled_for_mantis"

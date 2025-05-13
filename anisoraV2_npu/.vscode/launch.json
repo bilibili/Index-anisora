@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+          "name": "Python Debugger: Attach",
+          "type": "debugpy",
+          "request": "attach",
+          "justMyCode": true,
+          "connect": {
+            "host": "localhost",
+            "port": 5678
+          }
+        },
+        {
+          "name": "Python Debugger: Current File",
+          "type": "debugpy",
+          "request": "launch",
+          "program": "${file}",
+          "console": "integratedTerminal",
+          "justMyCode": false,
+          // "args": ["--megatron-path=/workspace/javis/Megatron-LM",
+          //             // "--loader-transformer-impl=transformer_engine",
+          //             "--loader-transformer-impl=local",
+          //             // "--max-position-embeddings=8192",
+          //             "--model-type=GPT",
+          //             "--loader=mcore",
+          //             // "--loader=megatron",
+          //             "--saver=llama2_hf",
+          //             // "--load-dir=/workspace/javis/pretrained/1990683-g",
+          //             "--load-dir=/workspace/javis/pretrained/1986251-n",
+          //             "--save-dir=/snapshot/nn"
+          //         ],
+          "env": {"BOSS_CKPT_ENDPOINT": "http://jssz-inner-boss.bilibili.co",
+                  "BOSS_CKPT_ACCESS": "<REDACTED_SECRET>",
+                  "BOSS_CKPT_SECRET": "<REDACTED_SECRET>",
+                  "BOSS_CKPT_BUCKET": "virtualhuman",
+                  "BOSS_CKPT_PATH": "2D/tmp"}
+          // "env": {"CUDA_LAUNCH_BLOCKING": "1", "CUDA_HOME": "/usr/local/cuda", "PATH": "/usr/local/cuda/bin", "LD_LIBRARY_PATH":"/usr/local/cuda/lib64"},
+      }
+    ]
+}

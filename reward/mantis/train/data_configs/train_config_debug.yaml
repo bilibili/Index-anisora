@@ -1,0 +1,46 @@
+data: 
+  - 
+    name: "youtube_v1"
+    type: json
+    path: "../../data/llava-video/data/0_30_s_youtube_v0_1/0_30_s_youtube_v0_1_cap_processed_train.json"
+    format: chat_video
+    split: train
+    max_num_frames: 64
+#  - 
+#     name: "datikz"
+#     type: json
+#     path: ../../data/cauldron/data/datikz.jsonl
+#     format: chat
+#     split: train
+#     shuffle: true
+#     revision: script 
+  # - 
+  #   name: "star"
+  #   type: huggingface
+  #   path: "TIGER-Lab/Mantis-Instruct"
+  #   format: chat
+  #   split: train
+  #   revision: script
+  # - 
+  #   name: "visual_story_telling"
+  #   type: huggingface
+  #   path: "TIGER-Lab/Mantis-Instruct"
+  #   format: chat
+  #   split: train
+  #   max_num_images: 8
+  #   revision: script
+  # - 
+  #   name: "contrastive_caption"
+  #   type: huggingface
+  #   path: "TIGER-Lab/Mantis-Instruct"
+  #   format: chat
+  #   split: train
+  #   revision: script
+  # - 
+  #   name: "imagecode"
+  #   type: huggingface
+  #   path: "TIGER-Lab/Mantis-Instruct"
+  #   format: chat
+  #   split: train
+  #   shuffle: true
+  #   revision: script

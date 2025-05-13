@@ -1,0 +1,22 @@
+resolution: "480p"
+aspect_ratio: "9:16"
+num_frames: 192
+fps: 24
+frame_interval: 1
+
+seed: 942
+multi_resolution: "STDiT2"
+dtype: "bf16"
+condition_frame_length: 5
+align: 5
+num_sampling_steps: 30
+cfg_scale: 7.0
+aes: 6.5
+
+prompt_as_path: true
+prompt_path: "prompt.txt"
+
+# speedup
+flash_attn: True  # turn on for faster inference
+enable_t5_speedup: True  # turn on for less memory usage
+

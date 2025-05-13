@@ -1,0 +1,16 @@
+data:
+  - 
+    name: "lrv_multi"
+    type: huggingface
+    path: "TIGER-Lab/Mantis-Instruct"
+    format: chat
+    split: train
+    revision: script
+  - 
+    name: "llava_665k_multi"
+    type: huggingface
+    path: "TIGER-Lab/Mantis-Instruct"
+    format: chat
+    split: train
+    shuffle: true
+    revision: script

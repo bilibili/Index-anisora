@@ -1,0 +1,10 @@
+data:
+  - 
+    name: "llava_instruct"
+    type: huggingface
+    path: "TIGER-Lab/llava-data"
+    format: chat
+    split: train
+    shuffle: true
+    revision: script
+    vl_only: true

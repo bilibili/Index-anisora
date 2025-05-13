@@ -1,0 +1,12 @@
+*output/
+*__pycache__/
+*samples*/
+*runs/
+*checkpoints/
+master_ip
+*logs/
+*.DS_Store
+.idea
+.ipynb_checkpoints
+*ckpts*
+*kernel_meta*

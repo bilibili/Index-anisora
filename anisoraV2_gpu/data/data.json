@@ -1,0 +1,44 @@
+[
+    {
+        "vae_all": "data/test_pts/vae_all/test.pt",
+        "vae1": "data/test_pts/vae1/test.pt",
+        "t5": "data/test_pts/t5/test.pt",
+        "clip": "data/test_pts/clip/test.pt",
+        "caption": "The video shows a sky with clouds that are white and fluffy. The sky is greenish-blue. There are small white stars scattered across the sky. The clouds move slowly as if they are floating on air. The video does not contain any text or audio. aesthetic score: 5.0. motion score: 1.0. camera motion: tilt up."
+    },
+    {
+        "vae_all": "data/test_pts/vae_all/test.pt",
+        "vae1": "data/test_pts/vae1/test.pt",
+        "t5": "data/test_pts/t5/test.pt",
+        "clip": "data/test_pts/clip/test.pt",
+        "caption": "The video shows a sky with clouds that are white and fluffy. The sky is greenish-blue. There are small white stars scattered across the sky. The clouds move slowly as if they are floating on air. The video does not contain any text or audio. aesthetic score: 5.0. motion score: 1.0. camera motion: tilt up."
+    },
+    {
+        "vae_all": "data/test_pts/vae_all/test.pt",
+        "vae1": "data/test_pts/vae1/test.pt",
+        "t5": "data/test_pts/t5/test.pt",
+        "clip": "data/test_pts/clip/test.pt",
+        "caption": "The video shows a sky with clouds that are white and fluffy. The sky is greenish-blue. There are small white stars scattered across the sky. The clouds move slowly as if they are floating on air. The video does not contain any text or audio. aesthetic score: 5.0. motion score: 1.0. camera motion: tilt up."
+    },
+    {
+        "vae_all": "data/test_pts/vae_all/test.pt",
+        "vae1": "data/test_pts/vae1/test.pt",
+        "t5": "data/test_pts/t5/test.pt",
+        "clip": "data/test_pts/clip/test.pt",
+        "caption": "The video shows a sky with clouds that are white and fluffy. The sky is greenish-blue. There are small white stars scattered across the sky. The clouds move slowly as if they are floating on air. The video does not contain any text or audio. aesthetic score: 5.0. motion score: 1.0. camera motion: tilt up."
+    },
+    {
+        "vae_all": "data/test_pts/vae_all/test.pt",
+        "vae1": "data/test_pts/vae1/test.pt",
+        "t5": "data/test_pts/t5/test.pt",
+        "clip": "data/test_pts/clip/test.pt",
+        "caption": "The video shows a sky with clouds that are white and fluffy. The sky is greenish-blue. There are small white stars scattered across the sky. The clouds move slowly as if they are floating on air. The video does not contain any text or audio. aesthetic score: 5.0. motion score: 1.0. camera motion: tilt up."
+    },
+    {
+        "vae_all": "data/test_pts/vae_all/test.pt",
+        "vae1": "data/test_pts/vae1/test.pt",
+        "t5": "data/test_pts/t5/test.pt",
+        "clip": "data/test_pts/clip/test.pt",
+        "caption": "The video shows a sky with clouds that are white and fluffy. The sky is greenish-blue. There are small white stars scattered across the sky. The clouds move slowly as if they are floating on air. The video does not contain any text or audio. aesthetic score: 5.0. motion score: 1.0. camera motion: tilt up."
+    }
+]

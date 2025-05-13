@@ -1,0 +1,8 @@
+data:  
+  - 
+    name: "video_eval"
+    type: json
+    path: "../../data/video_eval/train_regression.json"
+    format: qwen2_video_classification # change to classification for idefics2
+    split: train
+    fps: 24

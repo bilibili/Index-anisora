@@ -1,0 +1,27 @@
+# path:
+pretrained_model_path: "maxin-cn/Latte-1"
+
+# model config:
+model: LatteT2V
+video_length: 16
+image_size: [512, 512]
+# # beta schedule
+beta_start: 0.0001
+beta_end: 0.02
+beta_schedule: "linear"
+variance_type: "learned_range"
+
+# model speedup
+use_compile: False
+use_fp16: True
+
+# sample config:
+seed: 942
+run_time: 0
+guidance_scale: 7.5
+sample_method: 'DDIM'
+num_sampling_steps: 50
+enable_temporal_attentions: True
+enable_vae_temporal_decoder: True # use temporal vae decoder from SVD, maybe reduce the video flicker (It's not widely tested)
+
+prompt_path: 'prompt.txt'

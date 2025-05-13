@@ -1,0 +1,90 @@
+data:
+  - 
+    name: "lrv_multi"
+    type: huggingface
+    path: "TIGER-Lab/Mantis-Instruct"
+    format: chat
+    split: train
+    revision: script
+  - 
+    name: "llava_665k_multi"
+    type: huggingface
+    path: "TIGER-Lab/Mantis-Instruct"
+    format: chat
+    split: train
+    shuffle: true
+    revision: script
+    max_size: 50000
+  - 
+    name: "dreamsim"
+    type: huggingface
+    path: "TIGER-Lab/Mantis-Instruct"
+    format: chat
+    split: train
+    revision: script
+  - 
+    name: "birds-to-words"    
+    type: huggingface
+    path: "TIGER-Lab/Mantis-Instruct"
+    format: chat
+    split: train
+    revision: script
+  -
+    name: "spot-the-diff"
+    type: huggingface
+    path: "TIGER-Lab/Mantis-Instruct"
+    format: chat
+    split: train
+    revision: script
+  - 
+    name: "coinstruct"
+    type: huggingface
+    path: "TIGER-Lab/Mantis-Instruct"
+    format: chat
+    split: train
+    max_size: 20000 # 150K original
+    shuffle: true
+    revision: script
+  - 
+    name: "nlvr2"
+    type: huggingface
+    path: "TIGER-Lab/Mantis-Instruct"
+    format: chat
+    split: train
+    shuffle: true
+    revision: script
+    max_size: 15000
+  - 
+    name: "iconqa"
+    type: huggingface
+    path: "TIGER-Lab/Mantis-Instruct"
+    format: chat
+    split: train
+    shuffle: true
+    revision: script
+    max_size: 15000
+  - 
+    name: "contrastive_caption"
+    type: huggingface
+    path: "TIGER-Lab/Mantis-Instruct"
+    format: chat
+    split: train
+    revision: script
+    max_size: 15000
+  - 
+    name: "imagecode"
+    type: huggingface
+    path: "TIGER-Lab/Mantis-Instruct"
+    format: chat
+    split: train
+    shuffle: true
+    revision: script
+    max_size: 15000
+  - 
+    name: "multi_vqa"
+    type: huggingface
+    path: "TIGER-Lab/Mantis-Instruct"
+    format: chat
+    split: train
+    shuffle: true
+    revision: script

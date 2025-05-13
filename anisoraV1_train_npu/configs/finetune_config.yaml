@@ -1,0 +1,61 @@
+args:
+  # checkpoint_activations: True
+  model_parallel_size: 1
+  experiment_name: lora-disney
+  mode: finetune
+  load: /workspace/ckpt/tjy/sat_sdxl/ckpts/final-sft-2b-480-fp16-07-30-22-27
+  no_load_rng: True
+  train_iters: 1000
+  eval_iters: 1
+  eval_interval: 100
+  eval_batch_size: 1
+  save: ckpts
+  save_interval: 100
+  log_interval: 20
+  train_data: [";/DATA/jupyter/personal/zhipu/cogvideox_bilibili/data"]
+  valid_data: [";/DATA/jupyter/personal/zhipu/cogvideox_bilibili/data"]
+  split: 1,0,0
+  num_workers: 8
+
+data:
+    target: data_video.SFTDataset
+    params:
+      video_size: [480, 720]
+      fps: 8
+      max_num_frames: 49
+      skip_frms_num: 3.
+
+deepspeed:
+  train_micro_batch_size_per_gpu: 1
+  gradient_accumulation_steps: 1
+  steps_per_print: 50
+  gradient_clipping: 0.1
+  zero_optimization:
+    stage: 2
+    cpu_offload: false
+    contiguous_gradients: false
+    overlap_comm: true
+    reduce_scatter: true
+    reduce_bucket_size: 1000000000
+    allgather_bucket_size: 1000000000
+    load_from_fp32_weights: false
+  zero_allow_untested_optimizer: true
+  bf16:
+    enabled: False
+  fp16:
+    enabled: True
+    loss_scale: 0
+    loss_scale_window: 400
+    hysteresis: 2
+    min_loss_scale: 1
+  optimizer:
+    type: sat.ops.FusedEmaAdam
+    params:
+      lr: 0.0002
+      betas: [0.9, 0.95]
+      eps: 1e-8
+      weight_decay: 1e-4
+  activation_checkpointing:
+    partition_activations: false
+    contiguous_memory_optimization: false
+  wall_clock_breakdown: false
