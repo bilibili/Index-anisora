@@ -1,0 +1,126 @@
+HYVideoDiffusionTransformer(
+  (img_in): PatchEmbed(
+    (proj): Conv3d(16, 3072, kernel_size=(1, 2, 2), stride=(1, 2, 2))
+    (norm): Identity()
+  )
+  (txt_in): SingleTokenRefiner(
+    (input_embedder): Linear(in_features=4096, out_features=3072, bias=True)
+    (t_embedder): TimestepEmbedder(
+      (mlp): Sequential(
+        (0): Linear(in_features=256, out_features=3072, bias=True)
+        (1): SiLU()
+        (2): Linear(in_features=3072, out_features=3072, bias=True)
+      )
+    )
+    (c_embedder): TextProjection(
+      (linear_1): Linear(in_features=4096, out_features=3072, bias=True)
+      (act_1): SiLU()
+      (linear_2): Linear(in_features=3072, out_features=3072, bias=True)
+    )
+    (individual_token_refiner): IndividualTokenRefiner(
+      (blocks): ModuleList(
+        (0-1): 2 x IndividualTokenRefinerBlock(
+          (norm1): LayerNorm((3072,), eps=1e-06, elementwise_affine=True)
+          (self_attn_qkv): Linear(in_features=3072, out_features=9216, bias=True)
+          (self_attn_q_norm): Identity()
+          (self_attn_k_norm): Identity()
+          (self_attn_proj): Linear(in_features=3072, out_features=3072, bias=True)
+          (norm2): LayerNorm((3072,), eps=1e-06, elementwise_affine=True)
+          (mlp): MLP(
+            (fc1): Linear(in_features=3072, out_features=12288, bias=True)
+            (act): SiLU()
+            (drop1): Dropout(p=0.0, inplace=False)
+            (norm): Identity()
+            (fc2): Linear(in_features=12288, out_features=3072, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+          (adaLN_modulation): Sequential(
+            (0): SiLU()
+            (1): Linear(in_features=3072, out_features=6144, bias=True)
+          )
+        )
+      )
+    )
+  )
+  (time_in): TimestepEmbedder(
+    (mlp): Sequential(
+      (0): Linear(in_features=256, out_features=3072, bias=True)
+      (1): SiLU()
+      (2): Linear(in_features=3072, out_features=3072, bias=True)
+    )
+  )
+  (vector_in): MLPEmbedder(
+    (in_layer): Linear(in_features=768, out_features=3072, bias=True)
+    (silu): SiLU()
+    (out_layer): Linear(in_features=3072, out_features=3072, bias=True)
+  )
+  (guidance_in): TimestepEmbedder(
+    (mlp): Sequential(
+      (0): Linear(in_features=256, out_features=3072, bias=True)
+      (1): SiLU()
+      (2): Linear(in_features=3072, out_features=3072, bias=True)
+    )
+  )
+  (double_blocks): ModuleList(
+    (0-19): 20 x MMDoubleStreamBlock(
+      (img_mod): ModulateDiT(
+        (act): SiLU()
+        (linear): Linear(in_features=3072, out_features=18432, bias=True)
+      )
+      (img_norm1): LayerNorm((3072,), eps=1e-06, elementwise_affine=False)
+      (img_attn_qkv): Linear(in_features=3072, out_features=9216, bias=True)
+      (img_attn_q_norm): RMSNorm()
+      (img_attn_k_norm): RMSNorm()
+      (img_attn_proj): Linear(in_features=3072, out_features=3072, bias=True)
+      (img_norm2): LayerNorm((3072,), eps=1e-06, elementwise_affine=False)
+      (img_mlp): MLP(
+        (fc1): Linear(in_features=3072, out_features=12288, bias=True)
+        (act): GELU(approximate='tanh')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=12288, out_features=3072, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (txt_mod): ModulateDiT(
+        (act): SiLU()
+        (linear): Linear(in_features=3072, out_features=18432, bias=True)
+      )
+      (txt_norm1): LayerNorm((3072,), eps=1e-06, elementwise_affine=False)
+      (txt_attn_qkv): Linear(in_features=3072, out_features=9216, bias=True)
+      (txt_attn_q_norm): RMSNorm()
+      (txt_attn_k_norm): RMSNorm()
+      (txt_attn_proj): Linear(in_features=3072, out_features=3072, bias=True)
+      (txt_norm2): LayerNorm((3072,), eps=1e-06, elementwise_affine=False)
+      (txt_mlp): MLP(
+        (fc1): Linear(in_features=3072, out_features=12288, bias=True)
+        (act): GELU(approximate='tanh')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (norm): Identity()
+        (fc2): Linear(in_features=12288, out_features=3072, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+    )
+  )
+  (single_blocks): ModuleList(
+    (0-39): 40 x MMSingleStreamBlock(
+      (linear1): Linear(in_features=3072, out_features=21504, bias=True)
+      (linear2): Linear(in_features=15360, out_features=3072, bias=True)
+      (q_norm): RMSNorm()
+      (k_norm): RMSNorm()
+      (pre_norm): LayerNorm((3072,), eps=1e-06, elementwise_affine=False)
+      (mlp_act): GELU(approximate='tanh')
+      (modulation): ModulateDiT(
+        (act): SiLU()
+        (linear): Linear(in_features=3072, out_features=9216, bias=True)
+      )
+    )
+  )
+  (final_layer): FinalLayer(
+    (norm_final): LayerNorm((3072,), eps=1e-06, elementwise_affine=False)
+    (linear): Linear(in_features=3072, out_features=64, bias=True)
+    (adaLN_modulation): Sequential(
+      (0): SiLU()
+      (1): Linear(in_features=3072, out_features=6144, bias=True)
+    )
+  )
+)

@@ -1,0 +1,10 @@
+urllib3>=2.3.0
+boto3>=1.35.87
+botocore>=1.35.87
+awscli>=1.36.28
+transformers>=4.46.1
+flit>=3.9.0
+ml-dtypes
+datasets>=2.19.0
+easydict
+dashscope
