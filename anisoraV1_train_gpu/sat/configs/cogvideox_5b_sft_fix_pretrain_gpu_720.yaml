@@ -1,0 +1,239 @@
+args:
+  checkpoint_activations: True ## using gradient checkpointing
+  model_parallel_size: 1
+  experiment_name: animate_720
+  mode: finetune
+  no_load_rng: True
+  train_iters: 1000000
+  eval_iters: 1
+  eval_interval: 1000000
+  eval_batch_size: 1
+  save: ckpts
+  save_interval: 200
+  log_interval: 4
+  train_data: [ './demo_data/data.json' ]
+  valid_data: [ './demo_data/data.json' ]
+  split: 1,0,0
+  num_workers: 4
+  force_train: True
+  only_log_video_latents: True
+  sp_size: 4
+  # when using traning from vae data, you can comment out encoder_config in first_stage_config, it while skip init encoder and vae encoder
+  training_from_vae_encoded_data: True
+  training_from_vae_encoded_condition: False
+  mock_vae_encoded_data: False
+  mock_vae_encoded_config:
+    double_z: true
+    z_channels: 16
+
+data:
+    target: data_video.SFTDataset
+    params:
+      bucket_config: {
+        # ---480 720
+        "480p":  {9: 0, 17: 0, 25: 0, 33: 0, 41: 0, 49: 0, 57: 0, 65: 0, 73: 0, 97: 0, 201: 0, 209: 0, 217: 0, 225: 0, 241: 0, 265: 0, 305: 0, 417: 0, 425: 0, 433: 0}, # 73only-ok
+#        "480p":  {9: 0, 17: 0, 25: 0, 33: 0, 41: 0, 49: 0, 57: 0, 65: 0, 89: 1}, # 89cp2-not-ok# 81cp2_ok
+        # ---640 960
+        "640p":  {9: 0, 17: 0, 25: 0, 33: 0, 41: 0, 49: 0, 57: 0, 65: 0}, # only:49gg,cp2 also gg #41ok
+        # ---720 1088
+        "720p":  {9: 0, 17: 0, 25: 0, 33: 1, 41: 1, 49: 1, 57: 1, 65: 1, 73: 1, 81: 1, 89: 1, 97: 1, 161: 0, 193: 0, 221: 0}, # only:41gg,cp2 also gg # 33ok
+        # ---1080 1632
+        "1080p": {9: 0, 17: 0, 25: 0, 33: 0, 41: 0, 49: 0, 57: 0, 65: 0},
+      }
+      fps: 16
+      skip_frms_num: 3.
+      video_base_dir: '/mnt/hdfs/video_clips/bili_ogv_clip/'
+
+deepspeed:
+  train_micro_batch_size_per_gpu: 1
+  gradient_accumulation_steps: 1
+  steps_per_print: 1
+  gradient_clipping: 0.1
+  zero_optimization:
+    stage: 2
+    # offload_optimizer:
+    #   device: cpu
+    contiguous_gradients: false
+    overlap_comm: true
+    reduce_scatter: true
+    reduce_bucket_size: 1000000000
+    allgather_bucket_size: 1000000000
+    load_from_fp32_weights: false
+  zero_allow_untested_optimizer: true
+  bf16:
+    enabled: True
+  fp16:
+    enabled: False
+    loss_scale: 0
+    loss_scale_window: 400
+    hysteresis: 2
+    min_loss_scale: 1
+  optimizer:
+    type: sat.ops.FusedEmaAdam
+    params:
+      lr: 0.00002
+      betas: [0.9, 0.95]
+      eps: 1e-8
+      weight_decay: 1e-4
+  activation_checkpointing:
+    partition_activations: false
+    contiguous_memory_optimization: false
+  wall_clock_breakdown: false
+
+model:
+  scale_factor: 0.7
+  disable_first_stage_autocast: true
+  noised_image_input: true
+  noised_image_dropout: 0.05
+  log_keys:
+    - txt
+  
+  denoiser_config:
+    target: sgm.modules.diffusionmodules.denoiser.DiscreteDenoiser
+    params:
+      num_idx: 1000
+      quantize_c_noise: False
+
+      weighting_config:
+        target: sgm.modules.diffusionmodules.denoiser_weighting.EpsWeighting
+      scaling_config:
+        target: sgm.modules.diffusionmodules.denoiser_scaling.VideoScaling
+      discretization_config:
+        target: sgm.modules.diffusionmodules.discretizer.ZeroSNRDDPMDiscretization
+
+  network_config:
+    target: dit_video_concat.DiffusionTransformer
+    params:
+      time_embed_dim: 512
+      elementwise_affine: True
+      # num_frames: 49
+#      num_frames: 41
+      num_frames: 97
+      time_compressed_rate: 4
+      # latent_width: 90
+      # latent_height: 60
+      # latent_width: 136
+      latent_width: 160
+      latent_height: 90
+      # latent_width: 204
+      # latent_height: 136
+      num_layers: 42
+      patch_size: 2
+      in_channels: 32
+      out_channels: 16
+      hidden_size: 3072
+      adm_in_channels: 256
+      num_attention_heads: 48
+
+      transformer_args:
+        use_gpu_initialization: True
+        checkpoint_activations: True ## using gradient checkpointing
+        vocab_size: 1
+        max_sequence_length: 64
+        layernorm_order: pre
+        skip_init: false
+        model_parallel_size: 1
+        is_decoder: false
+
+      modules:
+        pos_embed_config:
+          target: dit_video_concat.Rotary3DPositionEmbeddingMixin
+          params:
+            hidden_size_head: 64
+            text_length: 226
+
+        patch_embed_config:
+          target: dit_video_concat.ImagePatchEmbeddingMixin
+          params:
+            text_hidden_size: 4096
+
+        adaln_layer_config:
+          target: dit_video_concat.AdaLNMixin
+          params:
+            qk_ln: True
+
+        final_layer_config:
+          target: dit_video_concat.FinalLayerMixin
+
+  conditioner_config:
+    target: sgm.modules.GeneralConditioner
+    params:
+      emb_models:
+        - is_trainable: false
+          input_key: txt
+          ucg_rate: 0.1
+          target: sgm.modules.encoders.modules.FrozenT5Embedder
+          params:
+            model_dir: "./5b_tool_models/t5-v1_1-xxl_new"
+            max_length: 226
+
+  first_stage_config:
+    target: vae_modules.autoencoder.VideoAutoencoderInferenceWrapper
+    params:
+      cp_size: 1
+      ckpt_path: "./5b_tool_models/videokl_ch16_long_20w.pt"
+      ignore_keys: [ 'loss' ]
+
+      loss_config:
+        target: torch.nn.Identity
+
+      regularizer_config:
+        target: vae_modules.regularizers.DiagonalGaussianRegularizer
+
+      encoder_config:
+        target: vae_modules.cp_enc_dec.ContextParallelEncoder3D
+        params:
+          double_z: true
+          z_channels: 16
+          resolution: 256
+          in_channels: 3
+          out_ch: 3
+          ch: 128
+          ch_mult: [ 1, 2, 2, 4 ]
+          attn_resolutions: [ ]
+          num_res_blocks: 3
+          dropout: 0.0
+          gather_norm: True
+
+      decoder_config:
+        target: vae_modules.cp_enc_dec.ContextParallelDecoder3D
+        params:
+          double_z: True
+          z_channels: 16
+          resolution: 256
+          in_channels: 3
+          out_ch: 3
+          ch: 128
+          ch_mult: [ 1, 2, 2, 4 ]
+          attn_resolutions: [ ]
+          num_res_blocks: 3
+          dropout: 0.0
+          gather_norm: false
+
+  loss_fn_config:
+    target: sgm.modules.diffusionmodules.loss.VideoDiffusionLoss
+    params:
+      offset_noise_level: 0
+      sigma_sampler_config:
+        target: sgm.modules.diffusionmodules.sigma_sampling.DiscreteSampling
+        params:
+          uniform_sampling: True
+          num_idx: 1000
+          discretization_config:
+            target: sgm.modules.diffusionmodules.discretizer.ZeroSNRDDPMDiscretization
+
+  sampler_config:
+    target: sgm.modules.diffusionmodules.sampling.VPSDEDPMPP2MSampler
+    params:
+      num_steps: 50
+      verbose: True
+
+      discretization_config:
+        target: sgm.modules.diffusionmodules.discretizer.ZeroSNRDDPMDiscretization
+
+      guider_config:
+        target: sgm.modules.diffusionmodules.guiders.DynamicCFG
+        params:
+          scale: 6
+          exp: 5
+          num_steps: 50

@@ -170,8 +170,6 @@ def _add_extra_encoder(hidden_states, text_seq_length, sp_size, pad = 0):
         # _pad_shape = list(hidden_states.shape)
         # _pad_shape[_dim] = pad
         # _pad_tensor = torch.zeros(_pad_shape, device=hidden_states.device, dtype=hidden_states.dtype)
-        # with open("/DATA/bvac/personal/opensora/zhipu/newsp/to_submit/same_sp_data_fix49addsppad/sat/shape.txt","a+")as f:
-        #     f.write("%s\t%s\n"%(str(_pad_shape),str(hidden_states.shape)))
         _pad_tensor = hidden_states[:,:, -2:-1, :].repeat(1,1, pad, 1)
         hidden_states = torch.cat([hidden_states, _pad_tensor], dim=_dim)
 

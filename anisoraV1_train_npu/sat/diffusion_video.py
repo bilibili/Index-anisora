@@ -152,7 +152,6 @@ class SATVideoDiffusionEngine(nn.Module):
     def shared_step(self, batch: Dict) -> Any:
         x = self.get_input(batch) #torch.Size([1, 33, 3, 720, 1088]) torch.Size([1, 16, 11, 90, 136])
         x_video = batch['mp4_real'].to(self.dtype)
-        # name_tt = '/DATA/bvac/personal/video_generation/i2v/vae_feature/cogvideox_bilibili/sat/1000_t/' + batch['vae_name'][0].split('/')[-2] + '_' + batch['vae_name'][0].split('/')[-1]
         # torch.save(x, name_tt+'1.pt')
         if self.noised_image_input:
             # image = self.add_noise_to_first_frame(image)
@@ -172,21 +171,19 @@ class SATVideoDiffusionEngine(nn.Module):
                     image=self.scale_factor*x[:, :, index_tmp:index_tmp+1]
                 else:
                     x_video_for1 = x_video.permute(0, 2, 1, 3, 4).contiguous()#torch.Size([1, 3, 33, 720, 1088])
-                    print('x_video_for1', 'index_', x_video_for1.shape, index_)
+                    # print('x_video_for1', 'index_', x_video_for1.shape, index_)
                     image = self.encode_first_stage(x_video_for1[:, :, index_:index_+1], batch)
                     
                 if index_==0:
                     index_tmp = (index_-1)//4+1
                     image_offline =self.scale_factor*x[:, :, index_tmp:index_tmp+1]
                     image_online = self.encode_first_stage( x_video.permute(0, 2, 1, 3, 4).contiguous()[:, :, index_:index_+1], batch)
-                    print('diff', torch.mean(torch.abs(image_offline-image_online)))
+                    # print('diff', torch.mean(torch.abs(image_offline-image_online)))
                     # print('image_online', image_online.shape, image_online, 'image_offline', image_online.shape, image_offline)
                     image_offline_all = torch.cat([image_offline, image_online], 0)
 
                     # name_vae = batch['vae_name'][0].split('/')[-2] + '_' + batch['vae_name'][0].split('/')[-1]
                     # video_name = batch['video_name'][0].split('/')[-2] + '_' + batch['video_name'][0].split('/')[-1]
-                    # torch.save(image_offline_all, '/DATA/bvac/personal/video_generation/i2v/vae_feature/cogvideox_bilibili/sat/1000/{}___{}.pt'.format(name_vae, video_name))
-                    # torch.save(image_online, '/DATA/workshop/personal/video_generation/i2v/tem_mask_onlineC/cogvideox_bilibili/sat/image_online.pt')
                     # import ipdb
                     # ipdb.set_trace()
                     
@@ -196,7 +193,7 @@ class SATVideoDiffusionEngine(nn.Module):
                         image_2=self.scale_factor*x[:, :, index_2_tmp:index_2_tmp+1]
                     else:
                         x_video_for2 = x_video.permute(0, 2, 1, 3, 4).contiguous()#torch.Size([1, 3, 33, 720, 1088])
-                        print('x_video_for2', 'index_2', x_video_for2.shape, index_2)
+                        # print('x_video_for2', 'index_2', x_video_for2.shape, index_2)
                         image_2 = self.encode_first_stage(x_video_for2[:, :, index_2:index_2+1], batch)
             else:
                 if np.random.randint(2)>0:

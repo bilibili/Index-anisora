@@ -172,7 +172,6 @@ model:
           target: sgm.modules.encoders.modules.FrozenT5Embedder
           params:
             model_dir: "./5b_tool_models/t5-v1_1-xxl_new"
-            # model_dir: "/DATA/bvac/personal/cogvideox_bilibili/pretrained_models/t5-v1_1-xxl_new"
             max_length: 226
 
   first_stage_config:
@@ -180,7 +179,6 @@ model:
     params:
       cp_size: 1
       ckpt_path: "./5b_tool_models/videokl_ch16_long_20w.pt"
-      # ckpt_path: "/DATA/bvac/personal/cogvideox_bilibili/pretrained_models/videokl_ch16_long_20w.pt"
       ignore_keys: [ 'loss' ]
 
       loss_config:
