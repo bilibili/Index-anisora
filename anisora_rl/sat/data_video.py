@@ -442,7 +442,7 @@ class SFTDataset(Dataset):
             del self.fps_list[key_]
             del self.video_size_list[key_]
             self.vs.remove(eval(key_))
-        #统计各个item的占比概率
+        
         for item in enumerate(self.p):
             key_ = item[1]
             total_video_num = total_video_num + self.p[key_]
@@ -560,14 +560,3 @@ if __name__ == "__main__":
         # # ---1080 1632
         # "1080p": {9: 0, 17: 0, 25: 0, 33: 0, 41: 0, 49: 0, 57: 0, 65: 0},
     }
-    dataset = SFTDataset(
-                'bench_sample_data/mean_dpo_2000_0219.json',
-               'video_clips/bili_ogv_clip/',
-                bucket_config,
-                16,
-                3)
-    for i in range(10):
-        item = dataset[i]
-        print(i,item["w_score"],item["l_score"])
-        print(item["txt"])
-        dataset.updatestep()

@@ -232,12 +232,6 @@ if __name__ == '__main__':
         transforms.ToTensor(),
         transforms.Normalize((0.48145466, 0.4578275, 0.40821073), (0.26862954, 0.26130258, 0.27577711)),
         ])  
-    # d = RetrievalVideoDataset('/workspace/BLIP/data/gallery_1031.json', transform_test, mode='gallery')
-    # v, c  = d.__getitem__(13)
-    # print(v.shape, c)
     d = RetrievalVideoDataset('/workspace/BLIP/data/query_1031.json', transforms.Normalize((0.48145466, 0.4578275, 0.40821073), (0.26862954, 0.26130258, 0.27577711)), mode='query')
     v, c, p  = d.__getitem__(13)
     print(v.shape, c, p)
-    # d = EvalVideoDataset('/workspace/BLIP/data/gen_conan_test.json', transforms.Normalize((0.48145466, 0.4578275, 0.40821073), (0.26862954, 0.26130258, 0.27577711)))
-    # v, c, p  = d.__getitem__(13)
-    # print(v.shape, c, p)
