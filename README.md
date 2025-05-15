@@ -29,7 +29,7 @@ VTubers
 ## 📣 Updates
 
 - `2025/05/12` 🔥🔥Everything we build is open-source. Check Out Now!!!
-- `2025/05/10` 🔥Our paper is accepted by IJCAI25. Camera Ready Version is comming soon. 
+- `2025/05/10` 🔥Our paper is accepted by IJCAI25. Camera Ready Version is updated. 
 - `2024/12/19` We submitted our paper on arXiv and released our project with evaluation benchmark.
 
 ## Project Guide
@@ -79,12 +79,10 @@ The first RLHF framework for anime video generation.
 - Methodology detailed in our preprint: <a href='http://arxiv.org/abs/2504.10044'> Aligning Anime Video Generation with Human Feedback </a>
 
 ## 📑 Todo List
-- AniSoraV1.0
-    - [ ] Support Nvidia GPU training.
 - AniSoraV2.0
     - [ ] Support 14B version, is excepted before the end of May.
 - AniSora Dataset
-    - [ ] High quality training set open apply
+    - [ ] **High quality training set open apply**
 - Anisora Benchmark
     - [ ] Update latest SOTA models performance
 
