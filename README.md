@@ -192,7 +192,7 @@ with different actions. Each label contains 10-30 video clips. The corresponding
 Fill the  <a href="assets/anisora_benchmark_agreement_form.doc">form</a> and send PDF format to yangsiqian@bilibili.com or xubaohan@bilibili.com (links provided after agreeing with Bilibili)
 
 ## 🤗 Acknowledgments
-We would like to express our sincere thanks to the [CogVideoX](https://github.com/THUDM/CogVideo)、[Wan2.1](https://github.com/Wan-Video/Wan2.1)、[FastVideo](https://github.com/Vchitect/FasterCache) and [OSS](https://github.com/bebebe666/OptimalSteps) for their valuable work.
+We would like to express our sincere thanks to the [CogVideoX](https://github.com/THUDM/CogVideo)、[Wan2.1](https://github.com/Wan-Video/Wan2.1)、[FasterCache](https://github.com/Vchitect/FasterCache) and [OSS](https://github.com/bebebe666/OptimalSteps) for their valuable work.
 
 ## 📚 Citation
 
