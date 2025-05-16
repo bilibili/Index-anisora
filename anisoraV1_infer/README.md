@@ -28,7 +28,7 @@ offload=1 python demo.py --base configs/cogvideox/cogvideox_5b_720_169_2.yaml
 ## 📁 System Notes
 
 - **Supports up to SP4**
-- **2×RTX 4090** runs **OOM** during decoding
+- **2 × RTX 4090** runs **OOM** during decoding
 - **RTX 4090** only supports up to **720×1088** resolution  
   - Therefore, for testing:  
     - 4090 uses **720×1088** 
