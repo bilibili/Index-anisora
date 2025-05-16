@@ -118,7 +118,7 @@ Features:
 |The scene shows two figures in red wedding clothes holding a red rope as they walk off into the distance|  <img src="assets/000000(223).png" width="800"/> |![Demo](assets/000000(223).gif)|
 |The yellow-haired figure reaches out to touch the head of the kneeling figure, and the kneeling figure's body rises and falls as he gasps for breath.|  <img src="assets/000000(232).png" width="800"/> |![Demo](assets/000000(232).gif)|
 |In the video, a white-haired girl dances as the camera zooms in. She sings while rotating her right hand toward the lens, fingers spread wide.| <img src="assets/changge1.jpg" width="800"/> | ![Demo](assets/changge1_vid.gif) |
-|n the video, five girls dance as the camera zooms in. They sing while raising their left hands overhead, then pulling them down to knee level.| <img src="assets/nvtuan.jpg"  width="800"/> | ![Demo](assets/nvtuan_vid.gif)|
+|In the video, five girls dance as the camera zooms in. They sing while raising their left hands overhead, then pulling them down to knee level.| <img src="assets/nvtuan.jpg"  width="800"/> | ![Demo](assets/nvtuan_vid.gif)|
 |In the frame, a person sprints forward at high speed, their motion appearing slightly blurred from the velocity. | <img src="assets/image_1.jpg"  width="800"/> | ![Demo](assets/image_1_vid.gif)|
 |In the frame, the character raises their arm, with gaseous currents visibly flowing along its surface. | <img src="assets/image_2.jpg"  width="800"/> | ![Demo](assets/image_2_vid.gif)|
 |The old man's gaze locks onto the gemstone, his right hand subtly adjusting the magnifying glass as his lips move—as if it holds the key to unraveling some ancient knowledge or secret. | <img src="assets/image_3.jpg"  width="800"/> | ![Demo](assets/image_3_vid.gif)|

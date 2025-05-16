@@ -48,7 +48,7 @@ torchrun --nproc_per_node=2 --master_port 43210 generate-pi-i2v.py --task i2v-14
 ```
 
 Where,
-    The --prompt file contains prompts and image paths for all cases (format: one line per case, image_path@@image_prompt), see `data/inference.tx` :
+    The --prompt file contains prompts and image paths for all cases (format: one line per case, image_path@@image_prompt), see `data/inference.txt` :
         An aesthetic score suffix can be fixed to 5.5, motion score is recommended between 1 and 2 (higher means more motion), adding "The video has no subtitles." means removing subtitles.
     --image specifies the output folder.
     --nproc_per_node and --ulysses_size should both be set to the number of GPUs used for multi-GPU inference.
