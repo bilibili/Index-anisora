@@ -17,9 +17,9 @@ export PATH=${ALLUXIO_HOME}/bin:$PATH
 
 # pip install 
 pip install ./env_file/torch-2.1.0+cpu-cp310-cp310-linux_x86_64.whl
-pip install torch-npu==2.1.0.post3 -i https://pypi.bilibili.co/repository/pypi-public/simple/
-pip install torchvision==0.16.0 -i https://pypi.bilibili.co/repository/pypi-public/simple/
-pip install boto3 -i https://pypi.bilibili.co/repository/pypi-public/simple/
+pip install torch-npu==2.1.0.post3 
+pip install torchvision==0.16.0 
+pip install boto3
 SCRIPT_ROOT="$(cd "$(dirname "$0")"; pwd -P)"
 
 export PYTORCH_NPU_ALLOC_CONF=expandable_segments:True
