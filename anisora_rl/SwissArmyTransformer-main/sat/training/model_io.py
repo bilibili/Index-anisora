@@ -221,37 +221,6 @@ def save_ds_checkpoint_no_optim(model, save_dir, tag=None, client_state={}, save
             fd.write(tag)
     return True
 
-def save_ds_checkpoint_no_optim_wo_ref(model, save_dir, tag=None, client_state={}, save_latest=True):
-    os.makedirs(save_dir, exist_ok=True)
-    # Ensure tag is a string
-    tag = str(tag)
-
-    #dict_keys(['module', 'buffer_names', 'optimizer', 'param_shapes', 'frozen_param_shapes', 'shared_params', 'frozen_param_fragments', 'lr_scheduler', 'data_sampler', 'random_ltd', 'sparse_tensor_module_names', 'skipped_steps', 'global_steps', 'global_samples', 'dp_world_size', 'mp_world_size', 'ds_config', 'ds_version', 'iteration', 'client_lr_scheduler', 'random_rng_state', 'np_rng_state', 'torch_rng_state', 'cuda_rng_state'])
-    sd = model.module.state_dict()
-    #if hasattr(model, 'module'): True
-    filtered_state_dict = {k: v for k, v in sd.items() if "ref_model" not in k}
-
-    modules_to_delete = [name for name in model.module._modules if "ref_model" in name]
-    for module_name in modules_to_delete:
-        del model.module._modules[module_name]
-
-    model.module.load_state_dict(filtered_state_dict, strict=False)
-
-    # Real save via deepspeed
-    model._create_checkpoint_file(save_dir, tag, False)
-    if model.zero_optimization_partition_weights(): 
-        # zero3, deepspeed originally save a full model by layerwise gather, which is slow and need extra memory. Moreover, the loading also needs a lot of CPU memory (infeasible for very large model).
-        torch.save({'module': zero3_state_dict(model)}, os.path.join(save_dir, tag, 'z3_rank_{:02d}_model_states.pt'.format(torch.distributed.get_rank())))
-    else:
-        model._save_checkpoint(save_dir, tag, client_state=client_state)
-    # Save latest checkpoint tag
-    if save_latest:
-        with open(os.path.join(save_dir, 'latest'), 'w') as fd:
-            fd.write(tag)
-
-    return True
-
-
 def get_checkpoint_iteration(load_path):
     # Read the tracker file and set the iteration.
     tracker_filename = get_checkpoint_tracker_filename(load_path)
@@ -300,7 +269,6 @@ def load_checkpoint(model, args, load_path=None, prefix='', specific_iteration=N
         return 0
     
     checkpoint_name = get_checkpoint_name(load_path, iteration, release)
-    #checkpoint_name = os.path.join(load_path, '{:d}-ema'.format(iteration), 'mp_rank_{:02d}_model_states.pt'.format(mpu.get_model_parallel_rank()))
     if mpu.get_data_parallel_rank() == 0:
             print_all('global rank {} is loading checkpoint {}'.format(
                 torch.distributed.get_rank(), checkpoint_name))
@@ -391,103 +359,6 @@ def load_checkpoint(model, args, load_path=None, prefix='', specific_iteration=N
     del cond
     return iteration
 
-def load_checkpoint_ori(model, args, load_path=None, prefix='', specific_iteration=None):
-    """Load a model checkpoint."""
-    if load_path is None:
-        load_path = args.load
-
-    # If model-only mode, set necessary args.
-    if not hasattr(args, 'mode'):
-        from copy import deepcopy
-        args = deepcopy(args)
-        args.mode = 'inference'
-
-    iteration, release, success = get_checkpoint_iteration(load_path)
-    if specific_iteration is not None:
-        assert type(specific_iteration) == int and specific_iteration > 0
-        print_rank0('Overriding checkpoint iteration to {}'.format(specific_iteration))
-        iteration = specific_iteration
-        
-    if not success:
-        return 0
-    
-    checkpoint_name = get_checkpoint_name(load_path, iteration, release)
-    if mpu.get_data_parallel_rank() == 0:
-            print_all('global rank {} is loading checkpoint {}'.format(
-                torch.distributed.get_rank(), checkpoint_name))
-            
-    # load state_dict into CPU        
-    sd = torch.load(checkpoint_name, map_location='cpu')
-
-    # if given `prefix`, load a speficic prefix in the checkpoint, e.g. encoder
-    new_sd = {'module':{}}
-    for k in sd:
-        if k != 'module':
-            new_sd[k] = sd[k]
-    for k in sd['module']:
-        if k.startswith(prefix):
-            new_sd['module'][k[len(prefix):]] = sd['module'][k]
-    sd = new_sd
-    
-    if hasattr(model, 'module'):
-        module = model.module
-    else: # inference without deepspeed
-        module = model
-
-    # only load module, other hyperparameters are just for recording.
-    missing_keys, unexpected_keys = module.load_state_dict(sd['module'], strict=False)
-    if len(unexpected_keys) > 0:
-        print_rank0(
-            f'Will continue but found unexpected_keys! Check whether you are loading correct checkpoints: {unexpected_keys}.')
-    if len(missing_keys) > 0:
-        if args.mode == 'inference':
-            if 'force_inference' in args and args.force_inference:
-                print_rank0(f'Warning: Missing keys for inference: {missing_keys}.')
-            else:
-                raise ValueError(f'Missing keys for inference: {missing_keys}.\nIf you still want to inference anyway, pass --force_inference to args.')
-        else: # new params
-            if not args.force_train:
-                assert all(name.find('mixins')>=0 or name.find('cross_attention')>=0 for name in missing_keys), missing_keys
-                assert args.mode == 'finetune'
-            # list all mixin names
-            mixin_names = []
-            for key_name in missing_keys:
-                if key_name.find('mixins') < 0:
-                    continue
-                parts = key_name.split('.')
-                mixin_name = parts[parts.index('mixins')+1]
-                if mixin_name not in mixin_names:
-                    mixin_names.append(mixin_name)
-            module.reinit(mixin_names) # initialize mixins
-
-    # Do not need this any more, because we create optimizer after load now.
-    # if args.mode != 'inference' and args.deepspeed and args.fp16:
-    #     model.optimizer.refresh_fp32_params() # restore fp32 weights from module
-
-    # Iterations.
-    if args.mode == 'finetune':
-        iteration = 0
-    elif args.mode == 'pretrain' and not args.no_load_rng: # rng states.
-        try:
-            random.setstate(sd['random_rng_state'])
-            np.random.set_state(sd['np_rng_state'])
-            torch.set_rng_state(sd['torch_rng_state'])
-            torch.cuda.set_rng_state(sd['cuda_rng_state'])
-            mpu.get_cuda_rng_tracker().set_states(sd['rng_tracker_states'])
-        except KeyError:
-            print_rank0('Unable to load optimizer from checkpoint {}, exiting. '
-                         'Specify --no-load-rng or --finetune to prevent '
-                         'attempting to load the random '
-                         'state.'.format(checkpoint_name))
-            exit()
-    elif args.mode == 'inference':
-        module.eval()
-
-    if mpu.get_data_parallel_rank() == 0:
-        print_all('> successfully loaded {}'.format(checkpoint_name))
-    del sd
-    return iteration
-
 def load_checkpoint_ref(model, args, load_path=None, prefix='', specific_iteration=None):
     """Load a model checkpoint."""
     if load_path is None:
@@ -508,7 +379,7 @@ def load_checkpoint_ref(model, args, load_path=None, prefix='', specific_iterati
     if not success:
         return 0
     
-    checkpoint_name = os.path.join(load_path, '{:d}-ema'.format(iteration), 'mp_rank_{:02d}_model_states.pt'.format(mpu.get_model_parallel_rank()))
+    checkpoint_name = os.path.join(load_path, '{:d}'.format(iteration), 'mp_rank_{:02d}_model_states.pt'.format(mpu.get_model_parallel_rank()))
     if mpu.get_data_parallel_rank() == 0:
             print_all('global rank {} is loading checkpoint {}'.format(
                 torch.distributed.get_rank(), checkpoint_name))
@@ -531,16 +402,8 @@ def load_checkpoint_ref(model, args, load_path=None, prefix='', specific_iterati
     else: # inference without deepspeed
         module = model
 
-    second_layer_names_1=set()
-    for name, param in module.named_parameters():
-        parts = name.split('.')
-        second_layer_names_1.add(parts[0]+'.'+parts[1])
-    #print("cond_model",second_layer_names_1) 
-
-
     # only load module, other hyperparameters are just for recording.
     missing_keys, unexpected_keys = module.load_state_dict(sd['module'], strict=False)
-    print("missing_unexpected_keys",len(missing_keys),len(unexpected_keys)) 
 
     if len(unexpected_keys) > 0:
         print_rank0(
