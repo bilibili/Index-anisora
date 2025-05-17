@@ -5,8 +5,12 @@
 
 <p align="center">
        🖥️  <a href="https://github.com/bilibili/Index-anisora/tree/main">GitHub</a> &nbsp&nbsp  |  &nbsp&nbsp🤗 <a href=https://huggingface.co/IndexTeam/Index-anisora>Hugging Face</a>&nbsp&nbsp |  &nbsp&nbsp🤖 <a href=https://www.modelscope.cn/organization/bilibili-index>Model Scope</a>&nbsp&nbsp | 📑 <a href='http://arxiv.org/abs/2412.10255'><img src='https://img.shields.io/badge/ArXiv-2412.10255-red'></a> &nbsp&nbsp ｜  📑 <a href='http://arxiv.org/abs/2504.10044'><img src='https://img.shields.io/badge/ArXiv-2504.10044-red'></a> &nbsp&nbsp
-<br>
+
 **中文简体** | [**English**](./README.md)
+
+<br>
+
+
 ----
 
 [**Index‑AniSora：终极开源动漫视频生成模型**](http://arxiv.org/abs/2412.10255) <be>
