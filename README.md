@@ -24,13 +24,22 @@ Powered by our IJCAI'25-accepted work  <a href='http://arxiv.org/abs/2412.10255'
 </div>
 
 
-
-
 ## 📣 Updates
 
 - `2025/05/12` 🔥🔥Everything we build is open-source. Check Out Now!!!
 - `2025/05/10` 🔥Our paper is accepted by IJCAI25. Camera Ready Version is updated. 
 - `2024/12/19` We submitted our paper on arXiv and released our project with evaluation benchmark.
+
+VTubers is comming. Every shot in the video below was generated using this first-frame-guided method, with the first frames sourced from dance videos of VTubers on Bilibili.
+
+| prmopt | image  | Video  |
+| --- | --- | --- |
+|In the video, a white-haired girl dances as the camera zooms in. She sings while rotating her right hand toward the lens, fingers spread wide.| <img src="assets/changge1.jpg" width="800"/> | ![Demo](assets/changge1_vid.gif) |
+|n the video, five girls dance as the camera zooms in. They sing while raising their left hands overhead, then pulling them down to knee level.| <img src="assets/nvtuan.jpg"  width="800"/> | ![Demo](assets/nvtuan_vid.gif)|
+
+<div align="center">
+    <video src="https://github.com/user-attachments/assets/c932535b-2c12-4353-9a92-e5f5f6c21cbb" controls width="60%" poster=""></video>
+</div>
 
 ## Project Guide
 
@@ -141,16 +150,6 @@ Features:
 |In this vibrant underwater scene from the animated film Finding Nemo, Marlin and Nemo, two clownfish, talk near a large purple piece of coral...| <img src="assets/132.png" width="800"/> |<img src="assets/132_mask.png" width="800"/> |![Demo](assets/132.gif)|
 |Same as above|  Same as above | <img src="assets/133_mask.png" width="800"/>|![Demo](assets/133.gif)|
 
-VTubers is comming. Every shot in the video below was generated using this first-frame-guided method, with the first frames sourced from dance videos of VTubers on Bilibili.
-
-| prmopt | image  | Video  |
-| --- | --- | --- |
-|In the video, a white-haired girl dances as the camera zooms in. She sings while rotating her right hand toward the lens, fingers spread wide.| <img src="assets/changge1.jpg" width="800"/> | ![Demo](assets/changge1_vid.gif) |
-|n the video, five girls dance as the camera zooms in. They sing while raising their left hands overhead, then pulling them down to knee level.| <img src="assets/nvtuan.jpg"  width="800"/> | ![Demo](assets/nvtuan_vid.gif)|
-
-<div align="center">
-    <video src="https://github.com/user-attachments/assets/c932535b-2c12-4353-9a92-e5f5f6c21cbb" controls width="60%" poster=""></video>
-</div>
 
 **<span style="font-size:18px;"> More videos are available in: [Video Gallery AniSoraV1.0](https://pwz4yo5eenw.feishu.cn/docx/XN9YdiOwCoqJuexLdCpcakSlnkg) </span>**
 
