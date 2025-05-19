@@ -2,7 +2,7 @@ args:
   image2video: True
   latent_channels: 16
   mode: inference
-  load: ckpt/5B_rl
+  load: ckpt
   batch_size: 1
   input_type: txt
   input_file: test_data/test_data.txt

@@ -101,14 +101,14 @@ model:
           ucg_rate: 0.1
           target: fastercache.models.cogvideox.sgm.modules.encoders.modules.FrozenT5Embedder
           params:
-            model_dir: "pretrained_models/t5-v1_1-xxl-fixed"
+            model_dir: "pretrained_models/t5-v1_1-xxl-new"
             max_length: 226
 
   first_stage_config:
     target: fastercache.models.cogvideox.vae_modules.autoencoder.VideoAutoencoderInferenceWrapper
     params:
       cp_size: 1
-      ckpt_path: "pretrained_models/3d-vae.pt"
+      ckpt_path: "pretrained_models/videokl_ch16_long_20w.pt"
       ignore_keys: [ 'loss' ]
 
       loss_config:
