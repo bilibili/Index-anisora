@@ -30,17 +30,6 @@ Powered by our IJCAI'25-accepted work  <a href='http://arxiv.org/abs/2412.10255'
 - `2025/05/10` 🔥Our paper is accepted by IJCAI25. Camera Ready Version is updated. 
 - `2024/12/19` We submitted our paper on arXiv and released our project with evaluation benchmark.
 
-VTubers is comming. Every shot in the video below was generated using this first-frame-guided method, with the first frames sourced from dance videos of VTubers on Bilibili.
-
-| prmopt | image  | Video  |
-| --- | --- | --- |
-|In the video, a white-haired girl dances as the camera zooms in. She sings while rotating her right hand toward the lens, fingers spread wide.| <img src="assets/changge1.jpg" width="800"/> | ![Demo](assets/changge1_vid.gif) |
-|n the video, five girls dance as the camera zooms in. They sing while raising their left hands overhead, then pulling them down to knee level.| <img src="assets/nvtuan.jpg"  width="800"/> | ![Demo](assets/nvtuan_vid.gif)|
-
-<div align="center">
-    <video src="https://github.com/user-attachments/assets/c932535b-2c12-4353-9a92-e5f5f6c21cbb" controls width="60%" poster=""></video>
-</div>
-
 ## Project Guide
 
 ### AniSoraV1.0
@@ -126,8 +115,6 @@ Features:
 |The figures in the picture are sitting in a forward moving car waving to the rear, their hair swaying from side to side in the wind| <img src="assets/000000(225).png" width="800"/> |![Demo](assets/000000(225).gif)|
 |The scene shows two figures in red wedding clothes holding a red rope as they walk off into the distance|  <img src="assets/000000(223).png" width="800"/> |![Demo](assets/000000(223).gif)|
 |The yellow-haired figure reaches out to touch the head of the kneeling figure, and the kneeling figure's body rises and falls as he gasps for breath.|  <img src="assets/000000(232).png" width="800"/> |![Demo](assets/000000(232).gif)|
-|In the video, a white-haired girl dances as the camera zooms in. She sings while rotating her right hand toward the lens, fingers spread wide.| <img src="assets/changge1.jpg" width="800"/> | ![Demo](assets/changge1_vid.gif) |
-|In the video, five girls dance as the camera zooms in. They sing while raising their left hands overhead, then pulling them down to knee level.| <img src="assets/nvtuan.jpg"  width="800"/> | ![Demo](assets/nvtuan_vid.gif)|
 |In the frame, a person sprints forward at high speed, their motion appearing slightly blurred from the velocity. | <img src="assets/image_1.jpg"  width="800"/> | ![Demo](assets/image_1_vid.gif)|
 |In the frame, the character raises their arm, with gaseous currents visibly flowing along its surface. | <img src="assets/image_2.jpg"  width="800"/> | ![Demo](assets/image_2_vid.gif)|
 |The old man's gaze locks onto the gemstone, his right hand subtly adjusting the magnifying glass as his lips move—as if it holds the key to unraveling some ancient knowledge or secret. | <img src="assets/image_3.jpg"  width="800"/> | ![Demo](assets/image_3_vid.gif)|
@@ -216,7 +203,3 @@ We would like to express our sincere thanks to the [CogVideoX](https://github.co
 }
 ```
 
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=bilibili/Index-anisora&type=Date)](https://www.star-history.com/#bilibili/Index-anisora&Date)
