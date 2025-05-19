@@ -11,7 +11,9 @@ pip install -r requirements.txt
 
 ### 2. Download Pretrained Weights
 
-Download VAE, text_encoder, and 5B model weights from HuggingFace.
+Please download the text_encoder and VAE from [HuggingFace](https://huggingface.co/IndexTeam/Index-anisora/tree/main/CogVideoX_VAE_T5) or [ModelScope](https://modelscope.cn/models/bilibili-index/Index-anisora/files) and put them in `./pretrained_models/`. 
+
+Please download 5B model weights from [HuggingFace](https://huggingface.co/IndexTeam/Index-anisora/tree/main/5B) or [ModelScope](https://modelscope.cn/models/bilibili-index/Index-anisora/files) and put it in `./ckpt/`.
 
 ### 3. Inference
 

@@ -6,22 +6,15 @@ download docker from [there]().
 
 ## 2. Download Pretrained Models:
 
-```bash
-cd anisoraV1_train_npu 
-download ./sat/5b_tool_models/ from our huggingface proj
-```
+Please download the text_encoder and vae from [HuggingFace](https://huggingface.co/IndexTeam/Index-anisora/tree/main/CogVideoX_VAE_T5) or [ModelScope](https://modelscope.cn/models/bilibili-index/Index-anisora/files) and put them in `./sat/5b_tool_models/`. 
 
-## 3. Download Environment Packages:
-
-download env_file from [there]() and put them at `./env_file/`. 
-
-## 4. Prepare Training Data:
+## 3. Prepare Training Data:
 
 Please construct the json file for your dataset following the format of [data.json](./sat/demo_data/data.json). 
 For VAE feature extraction, please refer to the [cli_vae_demo.py](https://github.com/THUDM/CogVideo/blob/main/inference/cli_vae_demo.py) in official CogVideoX repository.
 
 
-## 5. Training
+## 4. Training
 
 ```bash
 bash ./script/npu_run.sh

@@ -11,10 +11,7 @@ pip install -r requirements.txt
 
 ## 2. Download Pretrained Models:
 
-```bash
-cd anisoraV1_train_gpu 
-download ./sat/5b_tool_models/ from our huggingface proj
-```
+Please download the text_encoder and vae from [HuggingFace](https://huggingface.co/IndexTeam/Index-anisora/tree/main/CogVideoX_VAE_T5) or [ModelScope](https://modelscope.cn/models/bilibili-index/Index-anisora/files) and put them in `./sat/5b_tool_models/`. 
 
 ## 3. Prepare Training Data:
 
