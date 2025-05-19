@@ -19,10 +19,6 @@ Powered by our IJCAI'25-accepted work  <a href='http://arxiv.org/abs/2412.10255'
 
 ## Video Demos
 
-<div align="center">
-    <video src="https://github.com/user-attachments/assets/0fe90036-7634-4d98-9a7e-6719d2acdb48" controls width="60%" poster=""></video>
-</div>
-
 
 ## 📣 Updates
 
