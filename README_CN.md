@@ -29,17 +29,6 @@
     <video src="https://github.com/user-attachments/assets/0fe90036-7634-4d98-9a7e-6719d2acdb48" controls width="60%" poster=""></video>
 </div>
 
-> **VTuber 演示**  
-> 下方视频中的每个镜头均使用首帧引导方法生成，首帧取自 B 站 VTuber 舞蹈视频。
-
-| 提示词 (prompt) | 首帧图片 | 生成视频 |
-| --- | --- | --- |
-| 视频中，一位白发少女随着镜头推进起舞。她一边唱歌，一边右手朝镜头旋转并张开五指。| <img src="assets/changge1.jpg" width="800"/> | ![Demo](assets/changge1_vid.gif) |
-| 视频中，五位少女随着镜头推进起舞，她们唱歌的同时举起左手过头顶，然后放至膝盖位置。| <img src="assets/nvtuan.jpg"  width="800"/> | ![Demo](assets/nvtuan_vid.gif)|
-
-<div align="center">
-    <video src="https://github.com/user-attachments/assets/c932535b-2c12-4353-9a92-e5f5f6c21cbb" controls width="60%" poster=""></video>
-</div>
 
 ## 📣 更新日志
 
@@ -133,8 +122,6 @@
 | 画面中，角色坐在前进的汽车里，朝后方挥手，长发在风中左右摆动。| <img src="assets/000000(225).png" width="800"/> | ![Demo](assets/000000(225).gif)|
 | 场景中，两位身着红色婚服的角色拉着红绳，携手远去。| <img src="assets/000000(223).png" width="800"/> | ![Demo](assets/000000(223).gif)|
 | 金发角色伸手轻触跪地之人的头顶，后者喘息起伏。| <img src="assets/000000(232).png" width="800"/> | ![Demo](assets/000000(232).gif)|
-| 视频中，一位白发少女随着镜头推进起舞。她一边唱歌，一边右手朝镜头旋转并张开五指。| <img src="assets/changge1.jpg" width="800"/> | ![Demo](assets/changge1_vid.gif) |
-| 视频中，五位少女随着镜头推进起舞，她们唱歌的同时举起左手过头顶，然后放至膝盖位置。| <img src="assets/nvtuan.jpg"  width="800"/> | ![Demo](assets/nvtuan_vid.gif)|
 | 画面中，一人高速冲刺向前，速度导致动作出现轻微拖影。| <img src="assets/image_1.jpg"  width="800"/> | ![Demo](assets/image_1_vid.gif)|
 | 画面中，角色抬起手臂，手臂表面有气流流动效果。| <img src="assets/image_2.jpg"  width="800"/> | ![Demo](assets/image_2_vid.gif)|
 | 老人目光锁定宝石，右手微调放大镜，似在揭示古老秘密。| <img src="assets/image_3.jpg"  width="800"/> | ![Demo](assets/image_3_vid.gif)|
