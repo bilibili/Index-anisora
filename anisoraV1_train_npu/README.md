@@ -2,7 +2,7 @@
 
 ## 1. Docker Image:
 
-download docker from [there]().
+Download docker from [ascendhub](https://www.hiascend.com/developer/ascendhub/detail/e26da9266559438b93354792f25b2f4a), the code is running based on 2024.rc3-x86.
 
 ## 2. Download Pretrained Models:
 
