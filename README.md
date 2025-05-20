@@ -18,6 +18,9 @@ It enables one-click creation of video shots across diverse anime styles includi
 Powered by our IJCAI'25-accepted work  <a href='http://arxiv.org/abs/2412.10255'>AniSora: Exploring the Frontiers of Animation Video Generation in the Sora Era </a>
 
 ## Video Demos
+<div align="center">
+    <video src="https://github.com/user-attachments/assets/4351fc5e-f7fd-456b-807e-82fdcb321de2" controls width="60%" poster=""></video>
+</div>
 
 
 ## 📣 Updates

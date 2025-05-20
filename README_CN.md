@@ -24,11 +24,8 @@
 <a href='http://arxiv.org/abs/2412.10255'>*AniSora: Exploring the Frontiers of Animation Video Generation in the Sora Era*</a>  
 
 ## 🎬 视频演示
-
 <div align="center">
-    <video src="https://github.com/user-attachments/assets/0fe90036-7634-4d98-9a7e-6719d2acdb48" controls width="60%" poster=""></video>
-</div>
-
+    <video src="https://github.com/user-attachments/assets/4351fc5e-f7fd-456b-807e-82fdcb321de2" controls width="60%" poster=""></video>
 
 ## 📣 更新日志
 
