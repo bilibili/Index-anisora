@@ -431,8 +431,8 @@ class WanI2V:
             }
             latents = latents.unsqueeze(0)
 
-            oss_steps=[2, 6, 14, 28, 44, 56, 66, 74, 79, 84, 87, 90, 93, 94, 95, 96]####oss544Pmed96-16
-            # oss_steps=[2, 5, 11, 21, 36, 49, 63, 71, 80, 84, 87, 89, 92, 94, 95, 96]####oss544Pmed96-16
+            #oss_steps=[2, 6, 14, 28, 44, 56, 66, 74, 79, 84, 87, 90, 93, 94, 95, 96]
+            oss_steps=[2, 5, 11, 21, 36, 49, 63, 71, 80, 84, 87, 89, 92, 94, 95, 96]
             latents_oss = infer_OSS(oss_steps, model, latents, context, self.device, model_kwargs=model_kwargs)
 
             x0_oss = latents_oss
