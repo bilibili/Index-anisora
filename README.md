@@ -82,6 +82,7 @@ The first RLHF framework for anime video generation.
     - [ ] **High quality training set open apply**
 - Anisora Benchmark
     - [ ] Update latest SOTA models performance
+    - [ ] Provide more video demos on AniSora benchmark. 
 
 ---
 ## 💡 Abstract
