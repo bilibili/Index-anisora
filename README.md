@@ -32,7 +32,7 @@ Powered by our IJCAI'25-accepted work  <a href='http://arxiv.org/abs/2412.10255'
 
 
 <picture>
-  <img src="assets/wechat.jpg"  width="800"/>
+  <img src="assets/wechat.jpg"  width="200"/>
 </picture>
 
 ## Project Guide
