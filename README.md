@@ -32,6 +32,7 @@ Powered by our IJCAI'25-accepted work  <a href='http://arxiv.org/abs/2412.10255'
 **The signature must be handwritten and include the name of the affiliated company or academic institution.**
 
 **Join us! Send your CV to jiangyudong@bilibili.com**
+
 **If you want to learn more about AniSora, join the group chat.**
 
 <picture>
