@@ -45,7 +45,7 @@ Where,
 
     The --prompt file contains prompts and image paths for all cases (format: one line per case, image_path@@image_prompt), see test_data/
 
-        An aesthetic score suffix can be fixed to 5.5, motion score is recommended between 1 and 2 (higher means more motion), adding "The video has no subtitles." means removing subtitles
+        An aesthetic score suffix can be fixed to 5.5, motion score is recommended between 1 and 2 (higher means more motion).
 
     --image specifies the output folder
 
