@@ -392,7 +392,7 @@ def generate(args):
             logging.info("Generating video ...")
             if os.path.exists(args.save_file)==False:
                 video = wan_i2v.generate(
-                    args.prompt,
+                    args.prompt+" There is no text in the video.",
                     img,
                     max_area=MAX_AREA_CONFIGS[args.size],
                     frame_num=args.frame_num,
