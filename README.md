@@ -19,11 +19,16 @@ Powered by our IJCAI'25-accepted work  <a href='http://arxiv.org/abs/2412.10255'
 
 ## Video Demos
 <div align="center">
+    <video src="https://github.com/user-attachments/assets/8b639bce-a584-497e-bcfe-9f1d810ee0eb" controls width="60%" poster=""></video>
+</div>
+
+<div align="center">
     <video src="https://github.com/user-attachments/assets/4351fc5e-f7fd-456b-807e-82fdcb321de2" controls width="60%" poster=""></video>
 </div>
 
 
 ## 📣 Updates
+- `2025/07/02` 🔥🔥AniSora V3 Preview is updated, we will share our new progress in Siggraph Day 07/11. Join Us!
 - `2025/05/12` 🔥🔥Everything we build is open-source. Check Out Now!!!
 - `2025/05/10` 🔥Our paper is accepted by IJCAI25. Camera Ready Version is updated. 
 - `2024/12/19` We submitted our paper on arXiv and released our project with evaluation benchmark.
