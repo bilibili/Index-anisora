@@ -20,6 +20,10 @@ Powered by our IJCAI'25-accepted work  <a href='http://arxiv.org/abs/2412.10255'
 ## Video Demos
 
 <div align="center">
+    <video src="https://github.com/user-attachments/assets/a207d43e-26f6-445b-883e-9b28c129607f" controls width="60%" poster=""></video>
+</div>
+
+<div align="center">
     <video src="https://github.com/user-attachments/assets/4351fc5e-f7fd-456b-807e-82fdcb321de2" controls width="60%" poster=""></video>
 </div>
 
@@ -204,6 +208,9 @@ Fill the  <a href="assets/anisora_benchmark_agreement_form.doc">form</a> and sen
 
 ## 🤗 Acknowledgments
 We would like to express our sincere thanks to the [CogVideoX](https://github.com/THUDM/CogVideo)、[Wan2.1](https://github.com/Wan-Video/Wan2.1)、[FasterCache](https://github.com/Vchitect/FasterCache) and [OSS](https://github.com/bebebe666/OptimalSteps) for their valuable work.
+A special thanks to the creators of the AniSora community, such as "染色花" for their valuable suggestions on the project.
+
+
 
 ## 📚 Citation
 
