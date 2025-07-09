@@ -1,14 +1,14 @@
 args:
-  image2video: False # True for image2video, False for text2video
+  image2video: True # True for image2video, False for text2video
   latent_channels: 16
   mode: inference
-  load: "CogVideoX-5b-sat/transformer/" # This is for Full model without lora adapter
+  load: ckpt
   # load: "{your lora folder} such as zRzRzRzRzRzRzR/lora-disney-08-20-13-28" # This is for Full model without lora adapter
   batch_size: 1
   input_type: txt
-  input_file: "prompt.txt"
+  input_file: prompt_demo.txt
   sampling_num_frames: 13  # Must be 13, 11 or 9
-  sampling_fps: 8
+  sampling_fps: 16
   #  fp16: True # For CogVideoX-2B
   bf16: True # For CogVideoX-5B and CoGVideoX-5B-I2V
   output_dir: outputs/
@@ -16,6 +16,9 @@ args:
 model:
   scale_factor: 0.7
   disable_first_stage_autocast: true
+  latent_input: false
+  noised_image_input: true
+  noised_image_dropout: 0.05
   log_keys:
     - txt
   
@@ -31,8 +34,8 @@ model:
         target: fastercache.models.cogvideox.sgm.modules.diffusionmodules.denoiser_scaling.VideoScaling
       discretization_config:
         target: fastercache.models.cogvideox.sgm.modules.diffusionmodules.discretizer.ZeroSNRDDPMDiscretization
-        params:
-          shift_scale: 1.0 # different from cogvideox_2b_infer.yaml
+        #params:
+        #  shift_scale: 3.0
 
   network_config:
     target: fastercache.models.cogvideox.dit_video_concat.DiffusionTransformer
@@ -41,11 +44,11 @@ model:
       elementwise_affine: True
       num_frames: 49
       time_compressed_rate: 4
-      latent_width: 90
-      latent_height: 60
+      latent_width: 160
+      latent_height: 90
       num_layers: 42 # different from cogvideox_2b_infer.yaml
       patch_size: 2
-      in_channels: 16
+      in_channels: 32
       out_channels: 16
       hidden_size: 3072 # different from cogvideox_2b_infer.yaml
       adm_in_channels: 256
@@ -64,6 +67,7 @@ model:
         pos_embed_config:
           target: fastercache.models.cogvideox.dit_video_concat.Rotary3DPositionEmbeddingMixin # different from cogvideox_2b_infer.yaml
           params:
+            learnable_pos_embed: True
             hidden_size_head: 64
             text_length: 226
 
@@ -89,14 +93,14 @@ model:
           ucg_rate: 0.1
           target: fastercache.models.cogvideox.sgm.modules.encoders.modules.FrozenT5Embedder
           params:
-            model_dir: "t5-v1_1-xxl"
+            model_dir: "pretrained_models/t5-v1_1-xxl-new"
             max_length: 226
 
   first_stage_config:
     target: fastercache.models.cogvideox.vae_modules.autoencoder.VideoAutoencoderInferenceWrapper
     params:
       cp_size: 1
-      ckpt_path: "CogVideoX-5b-sat/vae/3d-vae.pt"
+      ckpt_path: "pretrained_models/videokl_ch16_long_20w.pt"
       ignore_keys: [ 'loss' ]
 
       loss_config:
@@ -146,8 +150,8 @@ model:
           num_idx: 1000
           discretization_config:
             target: fastercache.models.cogvideox.sgm.modules.diffusionmodules.discretizer.ZeroSNRDDPMDiscretization
-            params:
-              shift_scale: 1.0 # different from cogvideox_2b_infer.yaml
+            #params:
+            #  shift_scale: 3.0
 
   sampler_config:
     target: fastercache.models.cogvideox.sgm.modules.diffusionmodules.sampling.VPSDEDPMPP2MSampler
@@ -157,8 +161,8 @@ model:
 
       discretization_config:
         target: fastercache.models.cogvideox.sgm.modules.diffusionmodules.discretizer.ZeroSNRDDPMDiscretization
-        params:
-          shift_scale: 1.0 # different from cogvideox_2b_infer.yaml
+        #params:
+        #  shift_scale: 3.0
 
       guider_config:
         target: fastercache.models.cogvideox.sgm.modules.diffusionmodules.guiders.DynamicCFG
