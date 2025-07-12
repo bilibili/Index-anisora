@@ -199,3 +199,16 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+[Model License Agreement], Based on [Apache 2.0] License with Additional Restrictions:
+User Notice: Should you undertake fine-tuning/retraining or derivative development of this model, you must additionally comply with:
+1.	Usage Restrictions: The retrained model shall not be used for purposes violating laws or regulatory requirements of the output/usage jurisdiction (including but not limited to generating false information, discriminatory content, privacy infringement, etc.).
+2.	Output Compliance: For retrained models with generative capabilities, you must ensure all outputs comply with legal and regulatory requirements of the output/usage jurisdiction (including but not limited to false information, discriminatory content, or privacy violations).
+3.	Retraining Obligations: When retraining this model, you must independently ensure:
+(a) Training data contains no illegal or infringing content;
+(b) Retrained models won't be deployed in high-risk automated decision-making scenarios (e.g., credit assessment, employment evaluation) without passing compliance audits;
+(c) No circumvention of regulatory or review mechanisms in output/usage jurisdictions.
+4.	Liability: You assume full responsibility for all activities involving this model, including retraining and derivative works. Should your actions result in third-party claims, administrative penalties, or other losses to our company, you shall indemnify all damages (including legal fees, litigation costs, compensation, fines) and take necessary measures to eliminate negative impacts.
+5.	Downstream Compliance: You must ensure downstream users of derivative works comply with these terms through binding agreements. You bear liability for downstream violations.
+6.	Attribution: All copies of retrained models must retain this original copyright notice and restrictive clauses.
+
