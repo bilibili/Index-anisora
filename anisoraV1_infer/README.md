@@ -46,7 +46,7 @@ model/first_stage_config/params/ckpt_path: the CogvideoX vae model path
 
 model/conditioner_config/params/params/model_dir: the T5 text encoder model dir
 
-model/network_config/params/latent_width(latent_height): If they are 160*90, a 1280*720 video will be generated.
+model/network_config/params/latent_width(latent_height): If they are 160 * 90, a 1280 * 720 video will be generated.
 
 model/network_config/params/num_frames: If it's 49, a 49 frames video (49//16=3s) will be generated, while args/sampling_num_frames must be 13 (13=49//4+1).
 
