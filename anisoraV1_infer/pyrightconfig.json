@@ -1,0 +1,4 @@
+{
+    "include": ["fastercache/models/genmo/mochi_preview/pipelines.py"]
+}
+  

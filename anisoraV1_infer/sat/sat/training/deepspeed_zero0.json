@@ -1,0 +1,22 @@
+{
+  "train_micro_batch_size_per_gpu": 4,
+  "gradient_accumulation_steps": 1,
+  "gradient_clipping": 0.1,
+  "fp16": {
+    "enabled": true,
+    "loss_scale": 0,
+    "loss_scale_window": 200,
+    "hysteresis": 2,
+    "min_loss_scale": 0.01
+  },
+  "bf16": {
+    "enabled": false
+  },
+  "optimizer": {
+    "type": "AdamW",
+    "params": {
+      "lr": 0.0004,
+      "weight_decay": 1e-2
+    }
+  }
+}

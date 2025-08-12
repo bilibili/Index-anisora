@@ -78,7 +78,7 @@ class AbstractAutoencoder(pl.LightningModule):
         for k in keys:
             for ik in ignore_keys:
                 if k.startswith(ik):
-                    # print("Deleting key {} from state_dict.".format(k))
+                    print("Deleting key {} from state_dict.".format(k))
                     del sd[k]
         missing_keys, unexpected_keys = self.load_state_dict(sd, strict=False)
         print("Missing keys: ", missing_keys)
@@ -608,7 +608,7 @@ class VideoAutoencodingEngine(AutoencodingEngine):
         for k in keys:
             for ik in ignore_keys:
                 if k.startswith(ik):
-                    # print("Deleting key {} from state_dict.".format(k))
+                    print("Deleting key {} from state_dict.".format(k))
                     del sd[k]
         missing_keys, unexpected_keys = self.load_state_dict(sd, strict=False)
         print("Missing keys: ", missing_keys)

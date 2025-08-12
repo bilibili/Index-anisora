@@ -1,0 +1,5 @@
+include requirements.txt
+global-exclude __pycache__/*
+graft sat/tokenization/embed_assets
+global-include deepspeed_zero*.json
+recursive-include sat *.cpp *.h *.cu *.hip *.tr *.cuh *.cc *.json
