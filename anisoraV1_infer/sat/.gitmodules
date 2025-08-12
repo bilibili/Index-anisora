@@ -1,0 +1,3 @@
+[submodule "examples/CogView2"]
+	path = examples/CogView2
+	url = git@github.com:THUDM/CogView2.git

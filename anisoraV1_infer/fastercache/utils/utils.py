@@ -105,9 +105,9 @@ def all_to_all(input_: torch.Tensor, gather_dim: int, scatter_dim: int) -> torch
 def sp_split(input_: torch.Tensor) -> torch.Tensor:
     size = dist.get_world_size()
     rank = dist.get_rank()
-    # print(111111111*3,size,rank,input_.shape)#888888 4 1 torch.Size([2, 40006, 3072])
     if size == 1:
         return input_
+    # print(1111111,size,input_.shape)
     assert input_.size(1) % size == 0
     return input_.chunk(size, dim=1)[rank].contiguous()
 
