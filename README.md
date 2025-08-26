@@ -130,7 +130,7 @@ Features:
 
 **Image-generated videos in different artistic styles:**
 
-| prmopt | image  | Video  |
+| prompt | image  | Video  |
 | --- | --- | --- |
 |The figures in the picture are sitting in a forward moving car waving to the rear, their hair swaying from side to side in the wind| <img src="assets/000000(225).png" width="800"/> |![Demo](assets/000000(225).gif)|
 |The scene shows two figures in red wedding clothes holding a red rope as they walk off into the distance|  <img src="assets/000000(223).png" width="800"/> |![Demo](assets/000000(223).gif)|
@@ -144,7 +144,7 @@ Features:
 
 **Temporal Control:**
 
-| prmopt | first frame | mid frame| last frame  | Video  |
+| prompt | first frame | mid frame| last frame  | Video  |
 | --- | --- | --- | --- | --- |
 |In this video we see a scene from the animated film Beauty and the Beast with Belle and the Beast. Belle, with long blonde hair, is standing in a room with large windows, looking out the window and talking to it. She is wearing a purple dress with a purple top...| <img src="assets/cartoon_films_ren_wu_shuo_hua_34_firstmidlast_first.png" width="800"/> |<img src="assets/cartoon_films_ren_wu_shuo_hua_34_firstmidlast_mid.png" width="800"/> |<img src="assets/cartoon_films_ren_wu_shuo_hua_34_firstmidlast_last.png" width="800"/> |![Demo](assets/cartoon_films_ren_wu_shuo_hua_34_firstmidlast.gif)|
 |In this video, a young woman with long blonde hair can be seen looking out from behind a car door at night. The car is parked under a starry sky with a full moon illuminating the scene. The woman appears to be in a state of worry, as evidenced by her facial expression and the way she grips the car door. |  <img src="assets/motion_comics_tui_la_5_firstlast_first.png" width="800"/> | None | <img src="assets/motion_comics_tui_la_5_firstlast_last.jpeg" width="800"/>|![Demo](assets/motion_comics_tui_la_5_firstlast.gif)|
@@ -152,7 +152,7 @@ Features:
 
 **Spatial Control:**
 
-| prmopt | first frame | motion mask |  Video(with motion mask visualization)  |
+| prompt | first frame | motion mask |  Video(with motion mask visualization)  |
 | --- | --- | --- | --- | 
 |In this vibrant underwater scene from the animated film Finding Nemo, Marlin and Nemo, two clownfish, talk near a large purple piece of coral...| <img src="assets/132.png" width="800"/> |<img src="assets/132_mask.png" width="800"/> |![Demo](assets/132.gif)|
 |Same as above|  Same as above | <img src="assets/133_mask.png" width="800"/>|![Demo](assets/133.gif)|
