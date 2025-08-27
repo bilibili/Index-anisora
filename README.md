@@ -17,16 +17,6 @@ This Project presenting Bilibili's gift to the anime world - Index-AniSora, the 
 It enables one-click creation of video shots across diverse anime styles including series episodes, Chinese original animations, manga adaptations, VTuber content, anime PVs, mad-style parodies(鬼畜动画), and more!
 Powered by our IJCAI'25-accepted work  <a href='http://arxiv.org/abs/2412.10255'>AniSora: Exploring the Frontiers of Animation Video Generation in the Sora Era </a>
 
-## Video Demos
-
-<div align="center">
-    <video src="https://github.com/user-attachments/assets/a207d43e-26f6-445b-883e-9b28c129607f" controls width="60%" poster=""></video>
-</div>
-
-<div align="center">
-    <video src="https://github.com/user-attachments/assets/4351fc5e-f7fd-456b-807e-82fdcb321de2" controls width="60%" poster=""></video>
-</div>
-
 
 ## 📣 Updates
 - `2025/08/27` 🔥🔥Anisora V3 weights are now licensed under Apache 2.0 and publicly available for download on ModelScope and Hugging Face. The new version supports <font color="orange"> arbitrary-frame inference, character 3D video generation, Video style transfer, Multimodal Guidance, Ultra-Low-Resolution Video Super-Resolution</font>, delivering greater overall dynamics and more natural motion. The V3 model can generate 5 sec 360p video shot within 8 sec.
@@ -55,7 +45,7 @@ If you want to learn more about AniSora, join the group chat.
 ## Project Guide
 
 ### AniMe
-<img src="assets/poster.png" width="800"/>
+<img src="assets/poster.png" width="600"/>
 
 ### Long Animation Demos Powered by AniMe and AniSora
 | Fiction to Video | 2D Cartoon Adaptation|  3D Cartoon Adaptation| Comic to Video | 
@@ -70,7 +60,7 @@ Given a front-facing character illustration, generate a 360-degree rotation vide
 
 | Demo1 | Demo2|  Demo3| Demo4 | Demo5|  
 | --- | ---  |--- | ---  | ---  |
-|<img src="assets/zhuanquan_demo1.gif" width="150"/>|<img src="assets/zhuanquan_demo3.gif" width="100"/>|<img src="assets/zhuanquan_demo5.gif" width="300"/>|<img src="assets/zhuanquan_demo6.gif" width="300"/>|<img src="assets/zhuanquan_demo7.gif" width="150"/>|
+|<img src="assets/zhuanquan_demo1.gif" width="150"/>|<img src="assets/zhuanquan_demo3.gif" width="100"/>|<img src="assets/zhuanquan_demo5.gif" width="200"/>|<img src="assets/zhuanquan_demo6.gif" width="280"/>|<img src="assets/zhuanquan_demo7.gif" width="100"/>|
 
 - Arbitrary-frame inference
 
@@ -81,11 +71,12 @@ Given a front-facing character illustration, generate a 360-degree rotation vide
 |||<img src="assets/v2_1_last_frame.png" width="800"/> |![Demo](assets/v2_1_last_frame.gif)|
 
 - Video style transfer
+
 By leveraging image generation from the first and last frames combined with line art-based video generation, original videos can be transformed into videos of any desired style.
 
 | origin frame | transferred frame| video input | video transfer  |
 | --- | --- | --- | --- |
-|<img src="assets/video_transfer_origin_image.png" width="800"/> |<img src="assets/video_transfer_transfer_image.png" width="800"/> |<img src="assets/video_transfer_origin_video.gif" width="200"/> <img src="assets/video_transfer_cond_video.gif" width="200"/>|<img src="assets/video_transfer_transfer_video.gif" width="400"/>| 
+|<img src="assets/video_transfer_origin_image.png" width="800"/> |<img src="assets/video_transfer_transfer_image.png" width="800"/> |<img src="assets/video_transfer_origin_video.gif" width="200"/> <img src="assets/video_transfer_cond_video.gif" width="200"/>|<img src="assets/video_transfer_transfer_video.gif" width="200"/>| 
 
 
 - Multimodal Guidance
