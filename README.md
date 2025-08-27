@@ -58,11 +58,9 @@ If you want to learn more about AniSora, join the group chat.
 <img src="assets/poster.png" width="800"/>
 
 ### Long Animation Demos Powered by AniMe and AniSora
-[[Fiction to Video]](https://www.bilibili.com/video/BV1KGe1zrE3G)
-[[2D Cartoon Adaptation]](https://www.bilibili.com/video/BV1uAe1zmEmu)
-[[3D Cartoon Adaptation]](https://www.bilibili.com/video/BV18Ne1zjE7X)
-[[Comic to Video]](https://www.bilibili.com/video/BV1NGe1zrEHp)
-
+| Fiction to Video | 2D Cartoon Adaptation|  3D Cartoon Adaptation| Comic to Video | 
+| --- | ---  |--- | ---  | 
+| [![Fiction to Video](assets/AniMe_fiction_demo.jpg)](https://www.bilibili.com/video/BV1KGe1zrE3G)| [![2D Cartoon Adaptation](assets/AniMe_2d_demo.jpg)](https://www.bilibili.com/video/BV1uAe1zmEmu) | [![3D Cartoon Adaptation](assets/AniMe_3d_demo.jpg)](https://www.bilibili.com/video/BV18Ne1zjE7X) | [![Comic to Video](assets/AniMe_comic_demo.jpg)](https://www.bilibili.com/video/BV1NGe1zrEHp)| 
 
 ### AniSoraV3
 Find in 📁 `anisoraV3`
