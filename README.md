@@ -56,7 +56,7 @@ If you want to learn more about AniSora, join the group chat.
 Find in 📁 `anisoraV3`
 
 <div align="center">
-    <video src="https://github.com/user-attachments/assets/a207d43e-26f6-445b-883e-9b28c129607f" controls width="40%" poster=""></video>
+    <video src="https://github.com/user-attachments/assets/a207d43e-26f6-445b-883e-9b28c129607f" controls width="30%" poster=""></video>
 </div>
 
 - Character 3D video generation
@@ -108,6 +108,7 @@ Supports upscaling from 90p to 720p/1080p, enabling the generation of videos wit
 ### AniSoraV2.0
 Find in 📁 `anisoraV2_gpu`, `anisoraV2_npu` 
 
+
 Powered by the enhanced Wan2.1-14B foundation model for superior stability.
 - Distillation-accelerated inference without quality compromise, faster and cheaper
 - Full training/inference code release
@@ -116,6 +117,10 @@ Powered by the enhanced Wan2.1-14B foundation model for superior stability.
 
 ### AniSoraV1.0
 Find in 📁 `anisoraV1_infer`
+
+<div align="center">
+    <video src="https://github.com/user-attachments/assets/4351fc5e-f7fd-456b-807e-82fdcb321de2" controls width="30%" poster=""></video>
+</div>
 
 Trained on the CogVideoX-5B foundation model, with full training and inference code released. 
 - Localized region guidance for video control
