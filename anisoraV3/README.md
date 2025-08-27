@@ -1,5 +1,16 @@
 ##  🚀 Quick Started
 
+## Video Demos
+
+<div align="center">
+    <video src="https://github.com/user-attachments/assets/a207d43e-26f6-445b-883e-9b28c129607f" controls width="60%" poster=""></video>
+</div>
+
+<div align="center">
+    <video src="https://github.com/user-attachments/assets/4351fc5e-f7fd-456b-807e-82fdcb321de2" controls width="60%" poster=""></video>
+</div>
+
+
 ### 1. Environment Set Up
 
 ```bash
@@ -13,11 +24,11 @@ pip install -e .
 
 ### 2. Download Pretrained Weights
 
-Please download AnisoraV3 checkpoints from [Huggingface] comming soon....
+Please download AnisoraV3 checkpoints from [Huggingface](https://huggingface.co/IndexTeam/Index-anisora/tree/main/V3)
 
 ```bash
 git lfs install
-git clone https://huggingface.co/Wan-AI/Wan2.1-I2V-14B-480P
+git clone https://huggingface.co/IndexTeam/Index-anisora/tree/main/V3
 ```
 
 
