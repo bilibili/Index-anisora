@@ -54,6 +54,11 @@ If you want to learn more about AniSora, join the group chat.
 
 ### AniSoraV3
 Find in 📁 `anisoraV3`
+
+<div align="center">
+    <video src="https://github.com/user-attachments/assets/a207d43e-26f6-445b-883e-9b28c129607f" controls width="40%" poster=""></video>
+</div>
+
 - Character 3D video generation
 
 Given a front-facing character illustration, generate a 360-degree rotation video to achieve multi-angle consistent visual modeling of the character. This assists in maintaining consistency across different shot angles and supports 3D modeling, among other applications.
