@@ -87,7 +87,7 @@ By leveraging image generation from the first and last frames combined with line
 
 | origin frame | transferred frame| video input | video transfer  |
 | --- | --- | --- | --- |
-|<img src="assets/video_transfer_origin_image.png" width="800"/> |<img src="assets/video_transfer_transfer_image.png" width="800"/> |<img src="assets/video_transfer_origin_video.gif" width="800"/> ![Demo](assets/video_transfer_cond_video.gif)|![Demo](assets/video_transfer_transfer_video.gif)| 
+|<img src="assets/video_transfer_origin_image.png" width="800"/> |<img src="assets/video_transfer_transfer_image.png" width="800"/> |<img src="assets/video_transfer_origin_video.gif" width="400"/> <img src="assets/video_transfer_cond_video.gif" width="400"/>|<img src="assets/video_transfer_transfer_video.gif" width="800"/>| 
 
 
 - Multimodal Guidance
@@ -96,9 +96,9 @@ Pose, depth, line art, and audio guidance: Enable precise control over generated
 
 | input | prompt |  Video  |
 | --- | --- | --- |
-|<img src="assets/multi_guide_image_1.png" width="400"/> <img src="assets/multi_guide_pose.gif" width="400"/>  |The boy in red and the girl in red are fencing in the scene.|<img src="assets/multi_guide_pose_video.gif" width="800"/>| 
-|<img src="assets/multi_guide_image_2.png" width="400"/> <img src="assets/multi_guide_scr.gif" width="400"/>  |A worn-out red robot flings its arm away, only to have it fly back and reassemble with a new arm holding a sword.|<img src="assets/multi_guide_scr_video.gif" width="800"/>| 
-|Audio + img  <img src="assets/audio_image_2.png" width="400"/>  | - |  <video src="https://github.com/user-attachments/assets/ec7c64b0-175d-4b85-a93c-f7c6e0f27b57" controls width="400"></video> | 
+|<img src="assets/multi_guide_image_1.png" width="400"/> <img src="assets/multi_guide_pose.gif" width="400"/>  |The boy in red and the girl in red are fencing in the scene.|<img src="assets/multi_guide_pose_video.gif" width="400"/>| 
+|<img src="assets/multi_guide_image_2.png" width="400"/> <img src="assets/multi_guide_scr.gif" width="400"/>  |A worn-out red robot flings its arm away, only to have it fly back and reassemble with a new arm holding a sword.|<img src="assets/multi_guide_scr_video.gif" width="400"/>| 
+|Audio + img  <img src="assets/audio_image_2.png" width="400"/>  | - |  <video src="https://github.com/user-attachments/assets/b3d6038e-35d4-4712-b748-bbaf42e0260e" controls width="400"></video> | 
 
 - Ultra-Low-Resolution Video Super-Resolution
 
