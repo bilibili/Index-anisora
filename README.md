@@ -73,7 +73,6 @@ Given a front-facing character illustration, generate a 360-degree rotation vide
 | --- | --- | --- | ---  |
 |<img src="assets/v2_1_first_frame.png" width="800"/> | | |![Demo](assets/v2_1_first_frame.gif)|
 || <img src="assets/v2_1_mid_frame.png" width="800"/>  | |![Demo](assets/v2_1_mid_frame.gif)|
-|||<img src="assets/v2_1_last_frame.png" width="800"/> |![Demo](assets/v2_1_last_frame.gif)|
 
 - Video style transfer
 
@@ -101,7 +100,6 @@ Supports upscaling from 90p to 720p/1080p, enabling the generation of videos wit
 | generated low-resolution  video | high-resolution video(1080p)| GT |
 | --- | --- | --- |
 |  <img src="assets/video_sr_input_1.gif" width="200"/> | <img src="assets/video_sr_video_1.gif" width="200"/> | <img src="assets/video_sr_gt_1.gif" width="200"/> |
-|  <img src="assets/video_sr_input_2.gif" width="200"/> | <img src="assets/video_sr_video_2.gif" width="200"/> | <img src="assets/video_sr_gt_2.gif" width="200"/>  |
 |  <img src="assets/video_sr_input_3.gif" width="200"/> | <img src="assets/video_sr_video_3.gif" width="200"/> | <img src="assets/video_sr_gt_3.gif" width="200"/>  |
 
 
