@@ -40,6 +40,13 @@ If you want to learn more about AniSora, join the group chat.
   <img src="assets/wechat.png"  width="200"/>
 </picture>
 
+## 🌐 Online Demo
+
+You can try the project online without installation:
+
+👉 [Run the demo on CNB](https://cnb.cool/comfyui_gosha/comfyui_anisora)
+
+The demo provides sufficient free quota for testing.
 
 
 ## Project Guide
