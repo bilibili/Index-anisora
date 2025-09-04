@@ -3,7 +3,7 @@
 ### 1. Environment Set Up
 
 ```bash
-cd anisoraV3.1
+cd anisoraV3
 conda create -n wan_gpu python=3.10
 conda activate wan_gpu
 pip install -r req-fastvideo.txt
