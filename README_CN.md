@@ -26,6 +26,7 @@
 ## 🎬 视频演示
 <div align="center">
     <video src="https://github.com/user-attachments/assets/4351fc5e-f7fd-456b-807e-82fdcb321de2" controls width="60%" poster=""></video>
+</div>
 
 ## 📣 更新日志
 
