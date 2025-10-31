@@ -1,0 +1,107 @@
+##  🚀 Quick Started
+
+### 1. Environment Set Up
+
+```bash
+cd anisora_anymask
+conda create -n wan_gpu python=3.10
+conda activate wan_gpu
+pip install -r req-fastvideo.txt
+pip install -r requirements.txt
+pip install -e .
+```
+
+### 2. Download Pretrained Weights
+
+Please download AnisoraAnymask checkpoints from 🤗 [Huggingface](https://huggingface.co/IndexTeam/Index-anisora/tree/main/anymask) 
+
+```bash
+git lfs install
+git clone https://huggingface.co/Wan-AI/Wan2.1-I2V-14B-480P
+```
+
+
+### 3. Inference
+
+### Temporal Frame Interpolation for Video Quality Enhancement
+
+<video src=""
+
+#### Single-GPU Inference 
+
+```bash
+python generate-pi-i2v-any-mask1.py \
+    --task i2v-14B \
+    --size 1280*720  \
+    --ckpt_dir Wan2.1-I2V-14B-480P \
+    --image ./output/anisora_anymask_temp \
+    --prompt data/_tem_data/test.txt \
+    --base_seed 4096 \
+    --frame_num 129 \
+    --sample_steps 8 \
+    --sample_shift 5 \
+    --sample_guide_scale 1
+```
+
+#### Multi-GPU Inference
+
+```bash
+torchrun \
+    --nproc_per_node=8 \
+    --master_port 43210 \
+    generate-pi-i2v-any-mask1.py \
+    --task i2v-14B \
+    --size 1280*720  \
+    --ckpt_dir Wan2.1-I2V-14B-480P \
+    --image ./output/anisora_anymask_temp \
+    --prompt data/_tem_data/test.txt \
+    --dit_fsdp \
+    --t5_fsdp \
+    --ulysses_size 8 \
+    --base_seed 4096 \
+    --frame_num 129 \
+    --sample_steps 8 \
+    --sample_shift 5 \
+    --sample_guide_scale 1
+```
+
+### 4. Inference
+
+### Generation Controlled by Spatial Masks
+#### Single-GPU Inference 
+
+```bash
+python generate-pi-i2v-any-mask1_spa.py \
+    --task i2v-14B \
+    --size 1280*720  \
+    --ckpt_dir Wan2.1-I2V-14B-480P \
+    --image ./output/anisora_anymask_spa \
+    --prompt data/_spa_data/spa.txt \
+    --base_seed 4096 \
+    --frame_num 129 \
+    --sample_steps 8 \
+    --sample_shift 5 \
+    --sample_guide_scale 1
+```
+
+#### Multi-GPU Inference
+
+```bash
+torchrun \
+    --nproc_per_node=8 \
+    --master_port 43210 \
+    generate-pi-i2v-any-mask1_spa.py \
+    --task i2v-14B \
+    --size 1280*720  \
+    --ckpt_dir Wan2.1-I2V-14B-480P \
+    --image ./output/anisora_anymask_spa \
+    --prompt data/_spa_data/spa.txt \
+    --dit_fsdp \
+    --t5_fsdp \
+    --ulysses_size 8 \
+    --base_seed 4096 \
+    --frame_num 129 \
+    --sample_steps 8 \
+    --sample_shift 5 \
+    --sample_guide_scale 1
+```

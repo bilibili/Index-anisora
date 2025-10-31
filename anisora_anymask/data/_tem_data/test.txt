@@ -1,0 +1,2 @@
+An anime scene. aesthetic score: 5.5. motion score: 4.0. There is no text in the video.@@/mnt/group/yinmingyu/video_generation/i2v/wanxiang/test_data/SR_test/1024-1/1030_demo/1030_1.mp4
+\An anime scene. aesthetic score: 5.5. motion score: 4.0. There is no text in the video.@@/mnt/group/yinmingyu/video_generation/i2v/wanxiang/test_data/SR_test/1024-1/1030_demo/1030_3.mp4
