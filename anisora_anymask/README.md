@@ -13,7 +13,7 @@ pip install -e .
 
 ### 2. Download Pretrained Weights
 
-Please download AnisoraAnymask checkpoints from 🤗 [Huggingface](https://huggingface.co/IndexTeam/Index-anisora/tree/main/anymask) 
+Please download AnisoraAnymask checkpoints from 🤗 [Huggingface](https://huggingface.co/IndexTeam/Index-anisora/tree/main/anymask) [Model Scope](https://modelscope.cn/models/bilibili-index/Index-anisora/files)
 
 ```bash
 git lfs install
