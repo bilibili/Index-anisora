@@ -19,7 +19,7 @@ Powered by our IJCAI'25-accepted work  <a href='http://arxiv.org/abs/2412.10255'
 
 
 ## 📣 Updates
-- `2025/10/31` 🔥 we have released the anisora-anymask model weights, supporting image-to-video generation with temporal and spatial masks. [Huggingface](https://huggingface.co/IndexTeam/Index-anisora/tree/main/anymask)
+- `2025/10/31` 🔥 we have released the anisora-anymask model weights, supporting image-to-video generation with temporal and spatial masks. [Huggingface](https://huggingface.co/IndexTeam/Index-anisora/tree/main/anymask) [Model Scope](https://modelscope.cn/models/bilibili-index/Index-anisora/files)
 - `2025/09/25` 🔥The 12GB VRAM available version of V3.1 has been uploaded to ModelScope. [Model Scope](https://modelscope.cn/models/bilibili-index/Index-anisora/file/view/master/wan.7z) [Download](https://www.modelscope.cn/models/bilibili-index/Index-anisora/resolve/master/wan.7z)
 - `2025/09/23` 🔥We have released V3.2 weights,  which is trained on the stronger wan2.2 model and can reduce the number of inference steps to 8. Just like version 3.1, it has added arbitrary-frame inference and character 3D video generation. [Huggingface](https://huggingface.co/IndexTeam/Index-anisora/tree/main/V3.2) [Model Scope](https://www.modelscope.cn/models/bilibili-index/Index-anisora/files)
 - `2025/09/04` 🔥We have released V3.1 weights, which provide enhanced motion range capabilities. For optimal results, we strongly recommend using the v3.1 weights with a motion score setting of 2.0–4.0. [Huggingface](https://huggingface.co/IndexTeam/Index-anisora/tree/main/V3.1) [Model Scope](https://www.modelscope.cn/models/bilibili-index/Index-anisora/files)
