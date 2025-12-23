@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CVPR 2026 Workshop | AI-assisted Long Video Creation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background: #f9fafb;
+    }
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    nav {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0.5rem 1rem;
+    }
+    nav li {
+      margin: 0.5rem 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #1e3a8a;
+      font-weight: 600;
+    }
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #111827;
+    }
+    section h3 {
+      margin-top: 2rem;
+      color: #1e3a8a;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+    ul.topics li {
+      margin-bottom: 0.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    table th, table td {
+      border: 1px solid #e5e7eb;
+      padding: 0.75rem;
+      text-align: left;
+    }
+    table th {
+      background: #f3f4f6;
+    }
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+    .cta {
+      background: #1e3a8a;
+      color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .cta a {
+      color: white;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>AI-assisted Long Video Creation</h1>
+  <p>CVPR 2026 Workshop · Exploring multi-shot, multi-minute video generation with human–AI co-creation</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#cfp">Call for Papers</a></li>
+    <li><a href="#dates">Important Dates</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#organizers">Organizers</a></li>
+    <li><a href="#speakers">Speakers</a></li>
+    <li><a href="#ethics">Ethics</a></li>
+  </ul>
+</nav>
+
+<section id="about">
+  <h2>Workshop Overview</h2>
+  <div class="card">
+    <p>
+      This workshop investigates how far current AI models and systems are from producing long-form,
+      multi-shot videos that truly satisfy real users and creators. While recent generative models
+      excel at short clips, long video creation introduces challenges in narrative structure,
+      temporal consistency, multimodal alignment, and scalable human-in-the-loop editing.
+    </p>
+    <p>
+      A key motivation of this workshop is grounded in <strong>Bilibili’s large-scale creator ecosystem</strong>,
+      where millions of creators produce narrative-driven, multi-minute videos spanning animation,
+      education, entertainment, and storytelling. Such real-world production settings expose gaps
+      between current academic benchmarks and practical creator needs, particularly in maintaining
+      cross-shot consistency, narrative coherence, and efficient human–AI collaboration over long
+      temporal horizons.
+    </p>
+    <p>
+      Leveraging production-grade data, creator workflows, and user feedback from the Bilibili
+      platform, this workshop aims to bridge academic research with real-world impact. By bringing
+      together researchers, industry engineers, and content creators, we seek to define technical
+      roadmaps, creator-centered evaluation protocols, and reproducible benchmarks that measure not
+      only visual quality, but also narrative satisfaction, usability, and audience engagement in
+      AI-assisted long video creation.
+    </p>
+  </div>
+</section>
+
+<section id="cfp">
+  <h2>Call for Papers</h2>
+  <div class="card">
+    <p>
+      We invite submissions that advance methods, datasets, systems, or evaluations for generating
+      multi-shot, multi-minute videos that are coherent, controllable, and ethically responsible.
+    </p>
+    <h3>Topics of Interest</h3>
+    <ul class="topics">
+      <li>Narrative and temporal consistency in long video generation</li>
+      <li>Multimodal fusion and semantic alignment (video, audio, text, narration)</li>
+      <li>Controllability, editing, and creator interfaces</li>
+      <li>Knowledge-driven and genre-specific video creation</li>
+      <li>Human-centric evaluation and benchmarking</li>
+      <li>Human–AI collaboration and co-creation workflows</li>
+    </ul>
+    <div class="cta">
+      <p><strong>Submission Platform:</strong> All submissions will be handled via <strong>OpenReview</strong> (link to be announced).</p>
+      <p><strong>Paper Format:</strong> Submissions should follow the standard <strong>CVPR 2026 workshop paper format</strong> and are limited to <strong>4 pages</strong> (excluding references).</p>
+      
+    </div>
+  </div>
+</section>
+
+<section id="dates">
+  <h2>Important Dates</h2>
+  <div class="card">
+    <table>
+      <tr><th>Event</th><th>Date</th></tr>
+      <tr><td>Call for Papers Opens</td><td>December 22, 2025</td></tr>
+      <tr><td>Submission Deadline</td><td>March 1, 2026</td></tr>
+      <tr><td>Reviews Released</td><td>April 4, 2026</td></tr>
+      <tr><td>Camera-ready Deadline</td><td>April 11, 2026</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="schedule">
+  <h2>Preliminary Schedule (Half-day)</h2>
+  <div class="card">
+    <table>
+      <tr><th>Time</th><th>Session</th></tr>
+      <tr><td>09:00 – 09:15</td><td>Opening & Motivation</td></tr>
+      <tr><td>09:15 – 09:45</td><td>Invited Talk 1</td></tr>
+      <tr><td>09:45 – 10:15</td><td>Invited Talk 2</td></tr>
+      <tr><td>10:15 – 10:30</td><td>Coffee Break</td></tr>
+      <tr><td>10:30 – 11:30</td><td>Oral Paper Presentations</td></tr>
+      <tr><td>11:30 – 12:15</td><td>Panel Discussion</td></tr>
+      <tr><td>12:15 – 12:30</td><td>Closing Remarks</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="organizers">
+  <h2>Organizers</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Yudong Jiang</strong> (Bilibili) – Head of Video Foundation Model Technology</li>
+      <li><strong>Lisai Zhang</strong> (Bilibili) – Research Scientist</li>
+      <li><strong>Siqian Yang</strong> (Bilibili) – Research Scientist</li>
+      <li><strong>Baohan Xu</strong> (Bilibili) – Senior Research Scientist</li>
+      <li><strong>Yanzhang Liang</strong> (Bilibili) – Animation Production Executive</li>
+      <li>Additional organizers from Bilibili and academia</li>
+    </ul>
+  </div>
+</section>
+
+<section id="speakers">
+  <h2>Invited Speakers</h2>
+  <div class="card">
+    <p>The workshop will feature invited talks from leading researchers and practitioners in video generation, multimedia understanding, and AI-assisted creation.</p>
+    <ul>
+      <li>
+        <strong>Zuxuan Wu</strong> (Fudan University) – <em>Confirmed</em><br/>
+        Associate Professor at Fudan University and member of the Fudan Vision and Learning Lab (FVL). His research focuses on large-scale video understanding, video generation, and efficient deep learning architectures.
+      </li>
+      <li>
+        <strong>Qi Dai</strong> (Microsoft Research Asia) – <em>Confirmed</em><br/>
+        Principal Researcher at MSRA. His work spans video understanding and generation, including action recognition, representation learning, and large-scale multimedia intelligence.
+      </li>
+      <li>
+        <strong>Xia Ning</strong> (Bilibili) – <em>Tentative</em><br/>
+        Senior animation director with extensive experience in film and television production. His works have received multiple national and international awards, and his interests include the integration of AI into animation pipelines.
+      </li>
+      <li>
+        <strong>Sha Tong</strong> (Bilibili) – <em>Tentative</em><br/>
+        Leads AI products for creators at Bilibili, focusing on AI-powered video creation tools that enhance creator productivity and creative workflows.
+      </li>
+    </ul>
+    <p><em>Additional speakers may be announced.</em></p>
+  </div>
+</section>
+
+<section id="ethics">
+  <h2>Broader Impact & Ethics</h2>
+  <div class="card">
+    <p>
+      AI-assisted long video creation has the potential to democratize storytelling and empower
+      creators. At the same time, it raises concerns around misinformation, deepfakes, copyright,
+      and labor impacts. This workshop explicitly encourages ethical analysis, mitigation strategies,
+      and responsible deployment of generative video technologies.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© CVPR 2026 Workshop on AI-assisted Long Video Creation</p>
+  <p>Contact: organizers@ai-longvideo-cvpr2026.org (placeholder)</p>
+</footer>
+
+</body>
+</html>
