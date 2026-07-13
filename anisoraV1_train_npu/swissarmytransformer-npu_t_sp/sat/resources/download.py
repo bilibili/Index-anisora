@@ -76,10 +76,10 @@ def auto_create(name, *, path=None, url=None):
             assert os.path.isdir(model_path), f'Unzip failed, or the first-level folder in zip is not {name}.'
     return model_path # must return outside the `with lock` block
 
-SAT_ACCOUNT = '<REDACTED_SECRET>'
-SAT_ACCESS_KEY = '<REDACTED_SECRET>'
-SAT_SECRET_KEY = '<REDACTED_SECRET>'
-SAT_BUCKET = 'sat'
+SAT_ACCOUNT = 'YOUR ACCOUNT'
+SAT_ACCESS_KEY = 'YOUR ACCOUNT'
+SAT_SECRET_KEY = 'YOUR ACCOUNT'
+SAT_BUCKET = 'YOUR ACCOUNT'
 
 def download_s3(local_dir, remote_uri):
     '''Download remote_dir into (under) local_dir
