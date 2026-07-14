@@ -33,11 +33,11 @@
           //             "--load-dir=/workspace/javis/pretrained/1986251-n",
           //             "--save-dir=/snapshot/nn"
           //         ],
-          "env": {"BOSS_CKPT_ENDPOINT": "http://jssz-inner-boss.bilibili.co",
-                  "BOSS_CKPT_ACCESS": "<REDACTED_SECRET>",
-                  "BOSS_CKPT_SECRET": "<REDACTED_SECRET>",
-                  "BOSS_CKPT_BUCKET": "virtualhuman",
-                  "BOSS_CKPT_PATH": "2D/tmp"}
+          "env": {"BOSS_CKPT_ENDPOINT": "${env:BOSS_CKPT_ENDPOINT}",
+                  "BOSS_CKPT_ACCESS": "${env:BOSS_CKPT_ACCESS}",
+                  "BOSS_CKPT_SECRET": "${env:BOSS_CKPT_SECRET}",
+                  "BOSS_CKPT_BUCKET": "${env:BOSS_CKPT_BUCKET}",
+                  "BOSS_CKPT_PATH": "${env:BOSS_CKPT_PATH}"}
           // "env": {"CUDA_LAUNCH_BLOCKING": "1", "CUDA_HOME": "/usr/local/cuda", "PATH": "/usr/local/cuda/bin", "LD_LIBRARY_PATH":"/usr/local/cuda/lib64"},
       }
     ]

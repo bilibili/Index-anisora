@@ -9,8 +9,8 @@ cd $SCRIPT_ROOT/../..
 # export VS_DEBUG=True
 
 # export BOSS_CKPT_ENDPOINT=http://jssz-inner-boss.bilibili.co
-# export BOSS_CKPT_ACCESS=<REDACTED_SECRET>
-# export BOSS_CKPT_SECRET=<REDACTED_SECRET>
+# export BOSS_CKPT_ACCESS=YOUR_BOSS_CKPT_ACCESS
+# export BOSS_CKPT_SECRET=YOUR_BOSS_CKPT_SECRET
 # export BOSS_CKPT_BUCKET=virtualhuman
 # export BOSS_CKPT_PATH=2D/tmp/weight
 # export BOSS_CKPT_PATH=${BOSS_CKPT_PATH}/${PROJECT_NAME}/${DATA}
@@ -47,7 +47,7 @@ export WANDB_BASE_URL="https://api.wandb.ai"
 export WANDB_MODE=offline
 
 # export WANDB_MODE=online
-# export WANDB_API_KEY=<REDACTED_SECRET>
+# export WANDB_API_KEY=YOUR_WANDB_API_KEY
 
 rm -rf kernel_meta npu_prof_result
 

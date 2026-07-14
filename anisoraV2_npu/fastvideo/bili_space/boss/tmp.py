@@ -249,16 +249,12 @@ class BossClient:
     @classmethod
     def get_client(cls):
         cfg = {}
-        # cfg["endpoint"] = os.environ.get("BOSS_CKPT_ENDPOINT", None)
-        # cfg["access_key"] = os.environ.get("BOSS_CKPT_ACCESS", None)
-        # cfg["secret_key"] = os.environ.get("BOSS_CKPT_SECRET", None)
-        # cfg["bucket"] = os.environ.get("BOSS_CKPT_BUCKET", None)
-        # cfg["object_path"] = os.environ.get("BOSS_CKPT_PATH", None)
-
-        cfg["endpoint"] = "http://jssz-inner-boss.bilibili.co"
-        cfg["access_key"] = "<REDACTED_SECRET>"
-        cfg["secret_key"] = "<REDACTED_SECRET>"
-        cfg["bucket"] = "danbooru2024"
+        cfg["endpoint"] = os.environ.get(
+            "BOSS_CKPT_ENDPOINT", "http://jssz-inner-boss.bilibili.co")
+        cfg["access_key"] = os.environ.get("BOSS_CKPT_ACCESS", None)
+        cfg["secret_key"] = os.environ.get("BOSS_CKPT_SECRET", None)
+        cfg["bucket"] = os.environ.get("BOSS_CKPT_BUCKET", "danbooru2024")
+        cfg["object_path"] = os.environ.get("BOSS_CKPT_PATH", "")
 
         handle = None
         if not any(value is None for value in cfg.values()):

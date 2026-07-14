@@ -9,8 +9,8 @@ cd $SCRIPT_ROOT/../..
 # export VS_DEBUG=True
 
 # export BOSS_CKPT_ENDPOINT=http://jssz-inner-boss.bilibili.co
-# export BOSS_CKPT_ACCESS=<REDACTED_SECRET>
-# export BOSS_CKPT_SECRET=<REDACTED_SECRET>
+# export BOSS_CKPT_ACCESS=YOUR_BOSS_CKPT_ACCESS
+# export BOSS_CKPT_SECRET=YOUR_BOSS_CKPT_SECRET
 # export BOSS_CKPT_BUCKET=virtualhuman
 # export BOSS_CKPT_PATH=2D/tmp
 # export BOSS_CKPT_PATH=${BOSS_CKPT_PATH}/${PROJECT_NAME}/${DATA}
